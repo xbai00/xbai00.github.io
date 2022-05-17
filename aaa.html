@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+    <link rel="stylesheet" href="./css/font_size/iconfont.css">
+    <style>
+        .cation-middle {
+            line-height: 48px;
+            background: #2e72e5;
+            padding: 10px 15px 15px 0px;
+            font-size: 14px;
+            margin: 25px auto;
+            border-radius: 15px;
+            width: 1300px;
+        }
+
+        .cation-list {
+            overflow: hidden
+        }
+
+        .cation-list dt {
+            /* float: left; */
+            width: 98px;
+            font-weight: 500;
+            line-height: 50px;
+            position: relative;
+            color: #FFFFFF;
+        }
+
+        :before,
+        :after {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box
+        }
+
+        /* 
+        .cation-list dt:after {
+            content: "";
+            position: absolute;
+            right: 12px;
+            top: 13px;
+            border: 1px solid #FFFFFF;
+            border-width: 0 1px 1px 0;
+            width: 5px;
+            height: 5px;
+            -webkit-transform: rotate(-45deg);
+            -moz-transform: rotate(-45deg);
+            transform: rotate(-45deg)
+        } */
+
+
+        .cation-list dd a {
+            color: #e8e8e8;
+            font-size: 14px;
+            line-height: 25px;
+            height: 25px;
+            /* float: left; */
+            padding: 0 12px;
+            margin: 13px 2px
+        }
+
+        .cation-list dd a.on,
+        .cation-list a:hover {
+            color: #3074e8;
+            background-color: #FFFFFF;
+            border-radius: 15px;
+        }
+
+        .cation-list dd a:last-child {
+            border-right: 0
+        }
+
+        .cation-list:last-of-type dd {
+            border-bottom: 0
+        }
+
+        .cation-list {
+            overflow: hidden
+        }
+
+        .cation-list dt {
+            /* float: left; */
+            width: 98px;
+            font-weight: 500;
+            line-height: 50px;
+            position: relative;
+            color: #FFFFFF;
+        }
+
+        :before,
+        :after {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box
+        }
+
+        .cation-list dd {
+            border-bottom: 1px dotted #e0e0e0;
+            margin-left: 64px;
+            overflow: hidden
+        }
+
+
+        .cation-list dd a:last-child {
+            border-right: 0
+        }
+
+        .cation-list:last-of-type dd {
+            border-bottom: 0
+        }
+
+        .model_Class div,
+        #fenge {
+            float: left;
+            display: inline;
+        }
+
+        .model_Class #fenge {
+            margin: 0 30px;
+            font-size: 30px;
+            color: #FFFFFF;
+        }
+
+        .model_Class dd a {
+            border: 1px solid #FFFFFF;
+            border-radius: 15px;
+            margin-right: 10px;
+        }
+
+        .model_Class div,
+        #fenge {
+            float: left;
+            display: inline;
+        }
+
+        .model_Class #fenge {
+            margin: 0 30px;
+            font-size: 30px;
+            color: #FFFFFF;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="cation-middle">
+        <dl class="cation-list">
+            <dt>类型</dt>
+            <dd>
+                <a href="#" rel="" name="mode" class="all on">全部</a>
+                <a href="#" rel="6" name="mode" class="default">人物</a>
+                <a href="#" rel="7" name="mode" class="default">场景</a>
+                <a href="#" rel="8" name="mode" class="default">生物</a>
+                <a href="#" rel="9" name="mode" class="default">建筑</a>
+                <a href="#" rel="10" name="mode" class="default">医疗</a>
+                <a href="#" rel="11" name="mode" class="default">军事</a>
+                <a href="#" rel="13" name="mode" class="default">工业</a>
+                <a href="#" rel="36" name="mode" class="default">交通工具</a>
+                <a href="#" rel="37" name="mode" class="default">艺术文物</a>
+                <a href="#" rel="39" name="mode" class="default">食品</a>
+                <a href="#" rel="41" name="mode" class="default">航空航天</a>
+                <a href="#" rel="56" name="mode" class="default">游戏</a>
+                <a href="#" rel="73" name="mode" class="default">宇宙</a>
+                <a href="#" rel="81" name="mode" class="default">电子电器</a>
+                <a href="#" rel="85" name="mode" class="default">时尚风格</a>
+            </dd>
+        </dl>
+        <!-- <dl class="cation-list">
+            <dt>场景</dt>
+            <dd>
+                <a href="#" rel="" name="leixing" class="all on">全部</a>
+                <a href="#" rel="28" name="leixing" class="default">科幻</a>
+                <a href="#" rel="49" name="leixing" class="default">场景部件</a>
+                <a href="#" rel="62" name="leixing" class="default">自然</a>
+                <a href="#" rel="63" name="leixing" class="default">古代</a>
+                <a href="#" rel="64" name="leixing" class="default">现代</a>
+            </dd>
+        </dl> -->
+        <style>
+            .sel_ms dd {
+                display: none;
+                width: 100px;
+            }
+
+            .sel_ms dt {
+                width: 100px;
+                border-radius: 30px;
+                line-height: 30px;
+                border: 1px solid red;
+                text-align: center;
+                margin-left: 70px;
+                cursor: pointer;
+                padding: 0 5px;
+            }
+
+            .sel_ms a {
+                display: block !important;
+            }
+            .sel_ms i {
+                float: right;
+            }
+            
+        </style>
+        <dl class="cation-list sel_ms">
+            <dt><span>面数</span><i class="iconfont icon-sanjiaoright"></i></dt>
+            <dd>
+                <a href="#" rel="" name="mianshu" class="all on">全部</a>
+                <a href="#" rel="21" name="mianshu" class="default">5K以下</a>
+                <a href="#" rel="22" name="mianshu" class="default">5K-10K</a>
+                <a href="#" rel="23" name="mianshu" class="default">10K-30K</a>
+                <a href="#" rel="91" name="mianshu" class="default">30K-100K</a>
+                <a href="#" rel="92" name="mianshu" class="default">100K以上</a>
+            </dd>
+        </dl>
+        <script>
+            $(".sel_ms a").click(function () {
+                $(".sel_ms span").text($(this).text());
+                $(".sel_ms dd").slideUp(600);
+                $(".sel_ms .iconfont").removeClass('icon-youjiantou1').addClass('icon-sanjiaoright')
+            })
+            $(".sel_ms dt").click(function () {
+                if ($(".sel_ms dd").css("display") == "none") {
+                    $(".sel_ms dd").slideDown(600);
+                    $(".sel_ms .iconfont").removeClass('icon-sanjiaoright').addClass('icon-youjiantou1')
+                } else {
+                    $(".sel_ms dd").slideUp(600);
+                    $(".sel_ms .iconfont").removeClass('icon-youjiantou1').addClass('icon-sanjiaoright')
+                }
+            })
+        </script>
+        <dl class="cation-list">
+            <dt>布线</dt>
+            <dd>
+                <a href="#" rel="" name="buxian" class="all on">全部</a>
+                <a href="#" rel="20" name="buxian" class="default">三角形</a>
+                <a href="#" rel="24" name="buxian" class="default">四边形</a>
+                <a href="#" rel="93" name="buxian" class="default">N边形</a>
+            </dd>
+        </dl>
+        <dl class="cation-list model_Class">
+            <!-- <div class="model_class"> -->
+                <dt>筛选</dt>
+                <dd>
+                    <a href="#" rel="" name="shaixuan" class="all on">全部</a>
+                    <a href="#" rel="15" name="shaixuan" class="default">原创</a>
+                    <a href="#" rel="16" name="shaixuan" class="default">免费</a>
+                    <a style="display: none;"></a>
+                </dd>
+            <!-- </div> -->
+            <span id="fenge">|</span>
+            <div class="model_sort">
+                <dt>排序</dt>
+                <dd>
+                    <a href="#" rel="" name="px" class="all on">综合</a>
+                    <a href="#" rel="zuixin" name="px" class="default">最新</a>
+                    <a href="#" rel="jiage" name="px" class="default">价格</a>
+                    <a href="#" rel="remen" name="px" class="default">热门</a>
+                    <a href="#" rel="xiazai" name="px" class="default">下载量</a>
+                    <a style="display: none;"></a>
+                </dd>
+            </div>
+        </dl>
+    </div>
+
+    <script src="./js/min1.js"></script>
+    <script>
+        $(function () {
+            new SelectTag({
+                child: ".default", //所有默认
+                over: 'on', //当前选中
+                all: ".all" // 默认全部
+            });
+        })
+    </script>
+</body>
+
+</html>
