@@ -4,997 +4,305 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
-    <!-- 禁止移动端缩放 -->
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
-    <meta name="format-detection" content="telephone=no" />
-    <meta name="format-detection" content="email=no" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <title>响应式_模型页</title>
-    <link rel="stylesheet" href="./css/bootstrap.min.css">
-    <link rel="stylesheet" href="./css/font_size/iconfont.css">
-    <link rel="stylesheet" href="./css/publicHeadFoot.css">
-    <link rel="stylesheet" href="./css/publicAll.css">
-    <link rel="stylesheet" href="./css/index.css">
-    <script src="./js/jquery.min.js"></script>
-    <!-- <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script> -->
-    <script src="./js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./swiper-bundle.min.css">
+    <script src="./swiper-bundle.min.js"></script>
+    <title>豆豆</title>
+    <style>
+        body {
+            background: #CACDD1;
+        }
+
+        .wrap {
+            text-align: left;
+            display: none;
+        }
+
+        div {
+            margin-bottom: 10px;
+        }
+
+        .wrap div {
+            text-indent: 2em;
+        }
+
+        .wrap p:nth-child(1) {
+            text-align: center;
+            color: cadetblue;
+            font-size: 20px;
+            font-weight: bold;
+            margin: 100px 0 30px;
+        }
+
+        .wrap p:last-child {
+            text-align: right;
+            padding-right: 30px;
+            color: #666;
+            margin-top: 50px;
+        }
+
+        img {
+            display: block;
+            width: 90%;
+            margin: 10px auto;
+        }
+
+        #box {
+            margin: 0 auto;
+            text-align: center;
+            line-height: 100px;
+            margin-top: 150px;
+            font-size: 20px;
+            color: tomato;
+            animation: move 1s linear 5;
+            text-shadow: 5px 5px 5px gray;
+        }
+
+        @keyframes move {
+            0% {
+                font-size: 10px;
+                margin-top: 0px;
+            }
+
+            100% {
+                font-size: 100px;
+                margin-top: 100px;
+            }
+        }
+
+        .aud {
+            text-align: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            margin: 20px auto 30px;
+        }
+
+        .tex {
+            text-align: center;
+            display: none;
+            margin: 150px 0;
+        }
+
+        button {
+            border: 1px solid skyblue;
+            padding: 5px 15px;
+            background-color: skyblue;
+            color: white;
+        }
+
+        input[type="text"i] {
+            padding: 5px 2px;
+        }
+
+        .text_i {
+            font-size: 14px;
+            text-align: left;
+            padding-left: 20%;
+        }
+
+        .text_i>p:nth-child(1) {
+            font-size: 16px;
+        }
+
+        /* 轮播样式 */
+        .wrap1 {
+            /* display: none; */
+            width: 100%;
+            height: 450px;
+            margin-top: 50px;
+        }
+
+        .haha {
+            background: #DEE1E6;
+        }
+
+        .wrap1 img {
+            display: block;
+            margin: 0 auto;
+            height: 100%;
+        }
+        .wrap1>div:nth-child(1){
+            text-align: center;
+            color: #367bf0;
+            font-size: 26px;
+        }
+    </style>
+
 </head>
 
 <body>
-    <div class="container-fluid">
-        <!-- header -->
-        <header class="row">
-            <a class="col-sm-3 col-md-1 col-lg-1 hidden-sm hidden-xs" href="#">
-                <img src="./img/logo.png" alt="">
-            </a>
-            <span class="btn_l visible-sm visible-xs">
-                <img src="./icon/btn_l.png" alt="">
-                <div class="dia_l">
-                    <a href="#">首页</a>
-                    <a href="#">模型库</a>
-                    <a href="#">软件下载</a>
-                    <a href="#">VR仿真实验室</a>
-                    <a href="#">VR开发课程</a>
-                    <a href="#">行业应用</a>
-                    <a href="#">关于量子</a>
-                </div>
-            </span>
-            <ul class="col-sm-6 col-md-8 col-lg-8 navigation hidden-sm hidden-xs">
-                <li><a href="#">首页</a></li>
-                <li><a href="#">模型库</a></li>
-                <li><a href="#">软件下载</a></li>
-                <li><a href="#">VR仿真实验室</a></li>
-                <li><a href="#">VR开发课程</a></li>
-                <li><a href="#">行业应用</a></li>
-                <li><a href="#">关于量子</a></li>
-            </ul>
-            <a href="#"><img class="logo_sm visible-sm visible-xs" src="./img/logo.png" alt=""></a>
-            <div class="tit_r col-sm-3 col-lg-3 hidden-sm hidden-xs">
-                <span class="count_p">
-                    <img src="./img/car.png" alt="">
-                    <span class="count">0</span>
-                </span>
-                <span>购物车</span>
-                <!-- <span>注册/登陆</span> -->
-                <div class="userinfo">
-                    <img src="./img/3DsMax.png" alt="abc123" class="el-dropdown gerzx">
-                    <span class="box-pointer gerzx">abc123</span>
-                    <div class="subMenu us-anMal">
-                        <ul class="wrap">
-                            <li><i id="dzfding"><img src="./img/dzfding.png" /></i>
-                                <a href="#">待支付订单</a>
-                            </li>
-                            <li>
-                                <i id="wodesc"><img src="./img/wodesc.png" /></i><a href="#">我的上传</a>
-                            </li>
-                            <li>
-                                <i id="gerzx"><img src="./img/gerzx.png" /></i><a href="#">个人中心</a>
-                            </li>
-                            <li>
-                                <i id="tuichu"><img src="./img/tuichu.png" /></i><a href="#">退出</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <span class="btn_r visible-sm visible-xs">
-                <img src="./icon/btn_r.png" alt="">
-                <div class="dia_r">
-                    <a href="#">注册/登陆</a>
-                    <a href="#">量子会员</a>
-                    <a href="#">购物车</a>
-                    <a href="#">我的订单</a>
-                    <a href="#">资料与账号</a>
-                    <a href="#">个人中心</a>
-                    <a href="#">退出</a>
-                </div>
-            </span>
-        </header>
-        <div class="con">
-            <div class="con_i">
-                <!-- <img src="./img/bg_tit.png" alt=""> -->
-                <div class="con_ip"></div>
-                <div class="searchO bar7">
-                    <form name="" method="post" action="#">
-                        <span class="seach"><img src="./img/seach.png" /></span>
-                        <input type="text" placeholder="搜索你想要的模型" name="seachmtext">
-                        <button type="submit">搜索</button>
-                    </form>
-                </div>
-            </div>
+    <!-- <div class="aud">
+        <audio controls="controls" autoplay="autoplay" loop="loop" preload="auto" src="./9.mp3">
+        </audio>
+    </div> -->
+    <!-- <div id="box">3</div>
+    <div class="wrap">
+        <p>小王同学专属文案</p>
+        <div id="a">
+            1.我想说你是我一直以来想要找的那个人，茫茫人海中，相识了你，是一种缘份，只希望用我的真诚，换取你的真情。
         </div>
-        <div class="cont_ent cation-middle">
-            <ul class="cont_a cation-list">
-                        <a href="#" rel name="mode" class="liColor all on">
-                            <span>
-                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                    width="40" height="40" viewBox="0 0 40 40">
-                                    <image id="全部_拷贝_6" data-name="全部 拷贝 6" width="40" height="40"
-                                        xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAADeklEQVRYhdWZe4hMURzHPzvGI0nWH8QfSsojDRPKJrSilLwKJUVSpKiVIvnDI0UiNUIh8ojyZpU/PPKHR1ZhWSFh8YfaIpTXeq2OvqeOafacc8021reme++c37n3M+ee3+OcKXs7bSqOFgMTgN7AD+AnpVEKaAPUA+dymew2+1QL2AuoBgaXCCiku8DkXCb70gC2Bx5q1G4BW4AaA69fVQqZt9UEDAeWAkM1mgPSwHzB3QOGlXqocpmse/kUOFxVV2tGcJBhM+9+uhpXlhrOI8sy3QB218WjVgRoWbobwO+6KPuHQPmyLN/TmpxEOoTpOBLoAXwAbgKvI/qN1Dz/rD4vA/aWpSkd94N+axqwzniW8907YDewvJk+Zn7ngJ553+8DFgGfQg9NRcJtAI7nwRl1AZYBF4GOeW0LgGMa9YXqOx44CMxVSOvaEoATgRUBm7EaSfd6J3BKo7dTE/88MEdvoz9woiUAl0TYGM0C+uh8rY4zm7E9CRwAKqvqagcWA1iu6B6r/rKrAC4AXz397FsZXwygSTmdEgB2dFLki4Dtex27FAN4B/iYANBV20B7uY5vfUYhwDfAjQRQTc55KPBv1vGizyjGSbZG2BTSB0/bPDnQ5VwmW+e7SUygNnXiJsW7WP1U3BvtDIL5rhsw29R6CjvNeXkiQJQp7svz8oO1qw46N1Bj9CmkHbpncH4nSXUH9OmnDODmcavHmocVchLXUcqUGutDjvG3gFYNQKMeaAGbNHrvHRsD982BQ8VCNFxSQDNvVgFDPB46DrgEPPFUR6aS2avCI7goiy0W1gBnFLh94cNmDt/c6qX7XQsF6VjAScDqCDtXPyJszDzdFTKKAWyu1msJzaiqq+3rMwgBmpAyooWh8jXK1xgCnJpgnuLMzyTO19nXGHr41QQPMmqn47sEfb74GkOAV7TrEKt62T1I0KemGECUlmJ0WjsDSfpcz2Wyt4sF3K6CwacaVShW1RHrmAatT7yKATRpbIqySH4J9UVZobJACtuold2zAvc8ooz0tEDbH0ribSY17dEivFxrWjNHn3v6mJXefq07eiqH39H2WpTSTmiIif6vgKMJfhRKf2cT9rEsZSlnFPNLp38py5JOabLiLBlbgyxLQ0pbGkbrWxGgZTn+X2wBNypMVKvhUImgfLKb6I3WQUyVazaLW9ffEMAvFPXD261eHkIAAAAASUVORK5CYII=" />
-                                </svg>
-                            </span>
-                            <span>全部</span>
-                        </a>
-                        <a href="#" rel="6" name="mode" class="default">
-                            <span>
-                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                    width="40" height="40" viewBox="0 0 40 40">
-                                    <image id="VR_拷贝_4" data-name="VR 拷贝 4" x="1" width="38" height="40"
-                                        xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAAoCAYAAACSN4jeAAAFAUlEQVRYhb2Ye4xcUxzHP6bbmaq2W6pWtZ6V0rB0vFJKXKVKiNK0qks8Io2EiQj+EKriFUE8/phGItIIfVBlpd6P1gjWoyGKejRsPerRsKhqd8x2VX6b701OjnNn7jSz+01O5s6559zf957zO7/f93d3+S26kToxAngEOAgYDezuTO8FtgM9wD/ARuAz4Hvga+BD4Fvg33hCMcoGrTclcBoMHAdMA94GXnfuHQbMTvkuBwAnen1GcrUIvwp8Gpror9hJwCxgJjBOfduA24BDgAnAWBlMghm7B9gf2FvPORA43Hmmiy+B54GXilF2tU9sELAIuDjlSlTD7yK+xRuTUX8EtALTgYnemMXGoRhld9hWDhWpOQ0gZdgD+CBg1PyqUy3GJOAs4GxgMnAR8Alwr63YecAzDSLl4nZgQa1BsfMXSpWFwJXAd7aqmcCbNQo3y6/SYoXGmW8enNHS9xeW1/Hcbud6mBFr7kdiE7WlabDNJza0H4kZ5gP5FOPKzvWQTJUg20gsTfGsXuc6Y8R2DACxQy0E1BjjLlDZiIWTVeNxPXBClae6LrVPxlvC/sYy5eEQ3OjQYsT+HkBi+wEPVbkXo28rNw0crz5cDpwa6G91rnuN2OYGGLMD9CPwc8rxS4C94j+FUmUkcL5zv7vJC2z1YB3wFPAm8JMTuc1XxkhFzJag9NECrDWpUyhVykrkY50xW43YDynJmCI1wbhSqeZPYDgwFbhUvxXgPTMI3AncAOwLtGlFJkn+IK12WYKtjU2SIV3AKCnVLqlU25pfgPVAB1DSJHvwhcAlCb4yXvdte58DHgXuVkOrc5Sakc7J7p6SPX8A3zRpS96VJjJxd0HAmE2eJ4Mne/c2aWtMyxe1cmeaCAXOUbOQ9DTQDjwLvBBPdmRPnB1My62LFexMTUTSeBWwm+T0ZEkRF+YXL6ooaVZ86tRqxas2AzhddUPGm/+rFmO9ipdjgNN0b24xyj7han5jPDdhz2Myb+gFVurhyI/u0r2pgXnjHJLWhlSxsbwYZfuUtJuf2iTWrg5s130y3hV42JH6/SLBmJVwC9XsxB6rQzBBRYqVehuAt4pRdkk8yVcWJrHXqMRysTWBFDKAqp1asELlFbU+JNWV/t6j8PGy1zc9weBonS6qrNhOIURsuMo5F/mEmrBHzmu41Y3mKWDhoaNQqiwrlCr/4xEi1qqT5CKrEODDguwZ6jNJ83gdxG4Cjld4SkXsIx1jHxZQQ1il09YRcIEkDFa2MDxYjLLb/XEhYmW9jY8pVcqx13T/gZTErgFG6vr+0IAkvb9CzuzXnPMDmWGQQsCuel5O1bR/smPY16JbdP1kMcoGc3W1QmSevvS4mKN4tlZ9zXqBMd44y5NH6IuOj4eVVWzMtUnGQ1sZ4x3gsUD/Yu9/HIh61FCe9E82kkHxN5IFkkt1EzNc4X0EQX4WR+jNyqPjpU5GafvzzqrGONo5tfbSd1QzXItYWfmv2+tvk1JoUVbolDLZogzwsTPWtu0qkckpg8yoYTdVsWtfX06RUs05/ecqpy6SVlujFxghwnllhVnKECjuTamS3uoiZnhfXxvbPQls31+vUysrC+QSSrQN0nxfpTFYaytd2Irkpb1CMDkzLIFUuzTX52mN1UPMYBrM/Mu21mSz73su/pKzW1FiQtSURWrs7AcV8ylrlogtR9pJtQRuL2rkzfnNJ41c/QD+A63cHQ1mg6pIAAAAAElFTkSuQmCC" />
-                                </svg>
-                            </span>
-                            <span id="disnone">人物</span>
-                        </a>
-                        <a href="#" rel="7" name="mode" class="default">
-                            <span>
-                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                    width="40" height="40" viewBox="0 0 40 40">
-                                    <image id="场景_拷贝_4" data-name="场景 拷贝 4" x="1" width="38" height="40"
-                                        xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAAoCAYAAACSN4jeAAAFpklEQVRYha2YebBWYxzHP701ImNouX8gVDLi0jo1ndxUlsI1Wg2Syp6J20Zxo3XSYlruXGVGYwnxR0JiIk1SJ1eWsnQqhjKqy0wIiVEZ5td8T/P0zLnnnve9/Wbeec/ze7bv89ufp96yPms4QTQB+A+Yk89yURAm8nMnAFMJsAmYBcwGbKcudV20LsAaA4uADR6QywT0sboAa1DgvLuAmUCzlDEdClz7KOUrsU7AWmBxCqj9wEhggNpXS82t89koq8ROAaYBD9Yy7hlgDHAAaATMBUaoryVwU1ZgWSR2C7CjFlCfAD2k4gP6/8EBtQ6Yqu/TsjhHGrA2wFvAy8C5NYw5KAnZRuuB9sD7UnVToBoYCvQCtgE3AtvlHA+nAUtSZT1gsn5ptAQYC/yqOfOA0c74J4Dx+m4FVADXq212+Hk+wEq14EUpc74QoLVqD1ZQPVvt1QK4Xe0ZQLkzvxIo03fr4qqShQo95VEQHov2ceRvruA4uBYpIekYXQjMB65Vu1rR/yW1B+qQLdXeCIwCPlO7XA5V31nbtDAxCsK9Bsw87q8MgGKao/FTHJ6pcZy+WwALgL5q/wE8omBs1FveeknKHo1MlUeApcCtGYGNd77NVtoBu9U2z5vk9D8rtZmTNJEaa9OKYTliXnkYGKKTpBpkDfQbcBXwjQNqs8LHnQI1VuDTQNnevaMgHBIF4WHX+N9TGjGJTAdOygCqsVQV05+aG1cY3WWHnVLWOGR5NQrC46qSBvKmhsBO8WzAMv0PygDOpU8dUIsVaNNouQkiCsJ4b4qrSs43GzZVrgS+lbhj2qVgOFB9WamLvHJXLaC+06EHeaDGaL8VOamjnjzFXLqzs8BrimmPZwTWSE7UImXMTK253AHUvriqZL2826jIgJ3hTOoGfKzJcboyr50ItAXezUN6Pq2WB5fL4WJQ5slbZI8xNcl58Sgmy2MR0MfhfQVcAwwHfswD0E/AHVrrS4dfIkCTEubMyimH2Uk+8Dotib8DPA2c7vCXSBVPZgC1SGOfc3j1lRE2KOm7ZGEmiIJwZqwuO0lP5bh/vMF3K+/d7PB+Bx7QqasSAG2SakYqzsVkRePWGkqoqVEQdoqC8CMSyp4KSepNj38m8IrCSHOHv1F2WaYDHdLhuupSEpOlvYWyszbe2ia5DlEQHmdSade3YfLUph7/oILwIo9/lrx7r8fvrwOf4/HNASZEQTg/afMGyl8XAPcp/sRktvS2wA11+Kfq9P0lnUj8am/tIrn/kIR9V0nKx8XI4qqSZgrMu3Oa2Ed2NMpb4GdJrq8HGuXHrV6tFdMwreeDOiCbvS4B1FDN6QfcZqrc4xR5qEQuU0HokqWt2QngUc1v9f0vKnn6JYx5Xevu8fjnSdV9HV51zlFFTJcr0/vxzYx7tPq3eH2dVQDuTAC1XxIckADqfuBrD5TRtpwWqkg44WRJrafHNy/qWENg9L18qSrdFzz+xcAa2XdDr8+KgFJb6G8Zca8E9bXVrceAn+z1WXlzqfp92qsiwGxsn9c3QbZ5pce3vbtHQWieesg94TpF4mkJG5XJMH2R2wZXOJcL5FUW7V/1xnZU3Jvl3BtimhEFYfsoCI/FvqR75WQVdh96fKsY3lB6aeL1VUo9JvV75H0uTZENdvP4Vr91jYLwUR9ETRfezXq1GedWAqLhupn7d4TtkrpLsSMl3VHNRjtHQbgpCUBtTwTzlEJWevwiFYTLEyI6MugFKgzaeX3rxZuetnGWtwsLATcAtytOuTRAkhrh8Er1HODHu3+lgR5e+VMwsJiel1G/6PEtRT2ld44l+m/ljVmje+Q8MlK+72P7lDct9n3v9ZV6ORVVG2Uqd3bks1GhT50rZHsLUsaskqdWFrJBXd5gLUXZrSb2vJjsbnmvErXdhgqiQt9gXTpa6CmVmIc+lJAT8yPgf/Lba04uropUAAAAAElFTkSuQmCC" />
-                                </svg>
-                            </span>
-                            <span id="disnone">场景</span>
-                        </a>
-                        <a href="#" rel="8" name="mode" class="default">
-                            <span>
-                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                    width="40" height="40" viewBox="0 0 40 40">
-                                    <image id="分裂_生物_拷贝" data-name="分裂,生物 拷贝" x="2.5" width="35" height="40"
-                                        xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAoCAYAAAB0HkOaAAAD2klEQVRYhb2Ya4hVVRTHf3PUlJQxfEwTJqahdXWkEkMCdZxrVB/EREEzFFSMRAn6kFB+CKWYJD+oFeGb0l6+KUqM5KaJJb4qk7m+KlErCnV6mdk4d2TB/wxnDufcczbTmT9c7t7rrL3Pf6+99lprn4oXp31BB6AGeAF4GOgGeMAvwLvA616ucAUJs8YM4CDwJFAFVAI9gMHAYuB4qZgf0hFkxgKbgO5ldPoB+0vFfFXWZFam1DOLzcySzD3AQAf9cVmSuQPo6qCfy5JMCWhx0O+cJZlfgf8c9M9kSeYU8LeD/p6sT9OelHqNwHuuZKqBOcAU2+MU+vtS6FwFJnq5woU0E/oYBezUKTE0ALXApTJj/ijz7AawFVji5Qq2pU4R+I0AEcNQmyhhTE2E7AAwCxhgKcInQkpT+xgZIbsPuBX4J2bMo4H2NeB54LW4F7hYpiFCZgmvU4z+vcCwQH9OOSKuZBZqdUGYZe6P0O0FrAZ6qr8D+CDpBS7btAsYATwha/QHpgG7gaeA7yykAw9Jp1rj/gVeTvOCMJkKJbgxwO3AZeAQ8LXC+0nVID7WAx+rSIrDz8BPoWfmf31V5zT6wuA22Un5SCtcA7wEvAkcAQpadRj7gecSFnyLfn7btuuwLN1QKuYfC5OxqutLYELM1tXqxY9EPDuaQOZOoE7thdpaH9WKNW3IbADuSpi0t1ZjlhiiWtZkixLGGTYCF2PiUo9SMd8FWWE8MDrFhMhxlwFL5U89HWqWPgr9leEHXq7QhCyzNOVkYVJVDkTmy5IPRoSH1tK0c0xkTUIz8Lac8XfgfeDumDE/ANvVPq3Y9Kws9IliUCuZEzE5JA4W+qfr5PmYrBPXO2LMDf18nAEW+B0vV2h9YNu0wtEqr4aIGI7r16LQsE7xqaSTWhczVxt4ClxXUxJpiTkRFqMGqdQcpYhs/x8qkG5TIE0kg7Jpcwoy82PkK1QS1IccdFag/ZlVc/KXpxW72sQ0n4zVKvOAppiXNWu1q0LyOkXoqeqHL+5/AlfU7ipfW6559gLflor56b5yp9qa2X77mE6IOWiTimnzg3e0ws9DL+om5+8fkJ0FvgrpLSmTkC0/TWm5NJCKvj/ua89XCLPG5pDsG+CBQH9syjrYrjSPt+d2cCRCtiXUr085lyXQue0hY8HsFeC6+nvV99FHOSwtxrf33rRI5eVwfQgKotKxeLvNRTkO52Lk1xT00qKU5Y3SPpP95aB/Iuvr7VoH3U+zJlOvXJUEu3mu64gPjObYUWHAx3kg7+UKp/8PB07Cb0qazwCTdPIseX6vOugtL1doBLgJiUXNXZK5VzcAAAAASUVORK5CYII=" />
-                                </svg>
-                            </span>
-                            <span id="disnone">生物</span>
-                        </a>
-                        <a href="#" rel="9" name="mode" class="default">
-                            <span>
-                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                    width="40" height="40" viewBox="0 0 40 40">
-                                    <image id="中央电视台总部大楼_拷贝_4" data-name="中央电视台总部大楼 拷贝 4" y="2.5" width="40" height="35"
-                                        xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAjCAYAAADmOUiuAAAE3UlEQVRYha2Ye4xdUxTGf1M1OkNfU3e0HaozpqoalIbEK0aFNKIIiVf8gf7R0HpUqQSh/OMR7yIeqaqgoUEa6jFkjEeoR6ikEsylKMXcMh10OtOWkSXfYXXb55x7zXzJyTn3nL3P/fZ6fGvtU3Xu3HYqxDxgP+BF4B1gU6Uv8GguZP//kAreNRK4EZgCzAVWAd8AbcC1AyE5WARfAk4HVrt7I4Bjge+APYES8AowG5g0GASHljnuLOBw4CFgp+DZDGA8cDHwAXAocIKefQy8AbyucNhYKcFyLDgBWK7rzuDZMSL8ODAWeAq4Clir5wcDlwErga+B14BbgAtk8UEh2OquNwPjdH08sCvwqn4fCBQUo99H3mNjjwMWyuqjBoPgYmBycK8auBwYpkxOMA1YBzQAvTo8LJnOBs4EnpUFrxkIwTpJiodZ4QbgAOD5yJy9gHeBz2XtP7XII4CrgYnA7UANcD9wSR7BrCQZG7m3Tmdz4Z1ArVw7QZazeLsSuAi4B3hZ/3GGniELmo42AusHQnD34PebQFGHZeW3wBrF6GYli1l9hQ6bfytwvnvHfLl2JrDIjmKppaG50B6L2VyC3oI9wHnAMmAfHSGM+CfAScCDWoRl92kS+ceA9xR/pqf3ad6klKT6G1kxuIe7vldWel+xtMQ9W6pMHqo/PhXYDjwMVAE/KTQWSAvbVImmaf6+GRwyLegJfgRcJxFe7WLxCWlaglpZ+zkR/VAa2Krzo9LDRW5OqBJlE/Qu3qZEOExHglXBnB6dZ7lFLtQCTbRvA+4I5mRaMMvFnmC/4ijEbylz23Su03kDsFXxNzEYm1mzswgWdO6Tno2LjNmQMrfo3nEk8IUy+GZlv0dTsdRSl/KeTIL1Om8UwVAXzao/5BCskQttcbtpsdayXQi8rTE7A1MrJTjSWbCkWB0ejLHGoZRD0ES8C/gR+FTN7WQt9kkJuHWszZUSrFdZQy+vjoyx+9tzCDZqnFWRF6Sfa+V2a9FOAa5oLrQvrZSgryKdKQTT3ItkqFfvr1Gzi2r7MnnHvDTaNLFYalmc9qI0mal3193qXEKkqj+wBehQUzFM2udxkNw8Sxk/RA3vf5BmQZ+xXSkSk5bBCTp0HhVZzGfAUcADSfIUSy21lRD0VWST9h4hsiyIi8MxQTiYKpwowT5E90an1PeyCPb+T4KJBffm32zv1zZhvqs2CaKCnUbQa15vEJMJspLE8KXOTdI6w9HaKsTiLVqTy7FgX6SKZIl0SHC6esWTJS13pYyviKCXmT8URx6daqOyYCXtF7n4GeBX4OmM8WW7uMZVkW71dIVgTIeI5yFp6afKC8vlkSjBYqkl3HNHdbCgrEJurIrEYJNc1acs75YcvaXgn6n2arzG76+a3KGvDra5mhN0NgVZ+6s8gp6MuWiXiKXtjy+NzLV717s2K0GPCMyT/CzR5mqM6vEMjZsSEoy52BP8OaPni2GLSw6PEa57scbgJuARJcbd2umtkKV3QB7B9aQ3BDH0qzUL0RjZyA+XHq5U09DqavY/iBH0bdXWFA1Mw7aUJJjutDCGc7TJWlAOwdnuukGFvVzYTs32LiGsvYrW2gC2td0B9oXVNtdWOWzl1lbZ9xOLJYPFny0i6Q3z8Lu6l1jymS5acuV98rO+0ZKqGuj6C4HYDI28dZ9kAAAAAElFTkSuQmCC" />
-                                </svg>
-                            </span>
-                            <span id="disnone">建筑</span>
-                        </a>
-                        <a href="#" rel="10" name="mode" class="default">
-                            <span>
-                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                    width="40" height="40" viewBox="0 0 40 40">
-                                    <image id="Heart_pulse_拷贝" data-name="Heart, pulse 拷贝" x="0.5" y="0.5" width="39"
-                                        height="39"
-                                        xlink:href="data:img/png;base64,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" />
-                                </svg>
-                            </span>
-                            <span id="disnone">医疗</span>
-                        </a>
-                        <a href="#" rel="11" name="mode" class="default">
-                            <span>
-                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                    width="40" height="40" viewBox="0 0 40 40">
-                                    <image id="军事体验_拷贝" data-name="军事体验 拷贝" width="40" height="40"
-                                        xlink:href="data:img/png;base64,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" />
-                                </svg>
-                            </span>
-                            <span id="disnone">军事</span>
-                        </a>
-                        <a href="#" rel="13" name="mode" class="default">
-                            <span>
-                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                    width="40" height="40" viewBox="0 0 40 40">
-                                    <image id="核电站" width="40" height="40"
-                                        xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAEUUlEQVRYhb2Ya4hWRRjHf+/axbaLlqnJVm5hUnTXMMpXMJSlBKHoTS2ioD6IfbL8EPWlQbpaVFQEmlRfMqKTkKFZGUQegrCrKV2tLUy6WInVFpm78Sz/I+PszHnfds/rH87unDnPPPN/57nMM1Nj0zYqxsXAKqAb+Bi4DtipKWYBTwKnAh8A17o8+6Fs+sMqJnc8sAk4xiP0KnCu3t8AjlR7NrAemO7qjdHAm8AKl2cvj5Sgrcx4770P2K72NR65AucAOXCCR67ANFdvbAYmAFOBZcCwCHYCS2SuC4Fa8H0B8CLQq/dPbDWA+4CTgZme7NvAU8CDwElA3fv2vv1x9cZijbu7FR+8DHhWfpPCnSKDTPeW2jOAd70x/wCTgF/NtMB73rddwGnAHGCD+tY0IxhO8KV85Ttgv0y2B3hc3830RwFdChAz/6XAfOBvm1A6CpxngQL8Aax0ebbb1Rvml/P0/bcyEx8BvOa93yGz9UdkLwLukbk61fcVcD7wjp4Ytro82xr0r/MIrukoIXg7MFZtc/77E+TML7cAPR45w2RgVEL3+EQ/Ls9WAo8AzwG3lpn4G0WsCV6fkJmpCC2wXWnmC/lRbyA/F3hCAWAucIPLsx0pAgxGY5rgUmCRfCi2cgZLCw+pfRewvGSuKYH/Gb6XGxjhtcADLs9W+QJlPvgo8IzIHZuQ2QhcromXK/2YmTvkw794sld57X7JdMlShf6btAsdQMoHl+jXWT7bLSWx5xX50wyliZ+Bb2XaXiXdYhFeVyQ/ptVcr37/xz8fEkmZeHOQQEeCccp7KDEXe68tzkvAlXp/2OXZsnCelIl/r4hcqMcvDPpldtsK+1yefR1TkCK4vyKCA3oK2J47Tb47CJdnpTtFWR6sGuZr21TdPN2q7kNJsOYl6K5WB6VMPJDo/78Y8BZhL3Cikvu61n9VPIptF7iiAoJ9KmKtilmtNLRHKzjWk7PVvdfl2aehgtQKhoXlcGF6/tXYm5voeAEYQjDlg1UdBaxYGKP2ziayf8Y6UwRTW9twMFFj9jYZG/X7GMGOsnJoGJikIT8NZ3CM4BhFW1UoUsquJvo6Y50xgnb2GF0hwTP0Pyy1QkTdKkawu0JyeAQ/ayIXHlcHESM4ZeScDkJxaN/SRO7oWGeM4AXVcRvEWcDhwA4l6RQmt0pwesUELRdeovaHJXJnxzpDglZQnlkdtwPoUSMvkZka6wwJzo5ca1SBudKxtkRXt6s3JjQjOKcN5NCZxaL0I6/8D1GL+X9IcH6bCNZ0xYEOWinMC/t9grO8fbMduFE6V5foHrJAPsFFbSSHCtVxCpSUmU939cZBQVoQHKU7lnZjqfSXreKCGMGrgwq3XVgsvStK9N8SI3jbISCHyriFuhLZmJCZ6OqNhcWLnUl6gnvAduMvlVbma0NKfOFH4BSXZ/ustLd7GCu3qzqsN8PnSjtW3djF03HAPm+QxYNdPHUA/Ac0b+a5018kzQAAAABJRU5ErkJggg==" />
-                                </svg>
-                            </span>
-                            <span id="disnone">工业</span>
-                        </a>
-                        <a href="#" rel="36" name="mode" class="default">
-                            <span>
-                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                    width="40" height="40" viewBox="0 0 40 40">
-                                    <image id="交通_拷贝_4" data-name="交通 拷贝 4" y="-0.5" width="40" height="41"
-                                        xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAApCAYAAABHomvIAAAC8ElEQVRYhdWYS2gUQRCGv8RNdlYQxMeYGPXgwQeIICg+EC/iURBFQYJXb+JBD0oQGkERfBxFb8aTEYMHT4IiPiMqPsCbSBQJwiCKCjqGRKWXmqVT9u4mm9nZ8Ydht7t6ur+t6u6t7jbOn0JpBbAbWAe0a2OTNAo8BK6YKB5xh9CAR4GTGUH59B04YKK4P7G5HjrcYjirWcAlEwbbk4oEsAc43Tquf3TBhEGHrSyIZaun0RvghHx+lR/TlhLAH3nmAquB48Bsx74QWAsMJYBdqoNPwAbgc0pAVWWi+K4Jg3vAU6DDadeNE+JO1cFAFnCJTBS/Ah6o6qILGCjju6zgHL1V5TJTNcBfWZJVGfP/AizVaZyFYjVGqRbgaAsApxRi/Wuy0E81xgQPFpUxdx7UgK3woB6zJmArPFhzkWjAVqxi7ZTc7YPag0UTBm1JhpIHD+oxLVNnuyQKLuA48CFjOKuPqmyZigUBdEM8LjnaiEp/miITloe24V2m+reGoCAQrgct8CPgd4aHpjEneU5U9qAvxImygsMDh3CV56D2YF5UDnHiwSy9NVlVQqz3wESPgSdyuGmW7GHsvhzMtCoe1IB2wu4ENgLrZUUPNwHwDrDSRPEWE8V2BR9S9so+qHNBA1x3yq+BXbL9pKUvwA537zNRfA7od/oPqoX4mgfihedQMx0NAd889QPO9xnVAEPPi7bxvBQBu6vUL1Vl7xz03c/Ya5E5KcFZrQH2uRUmDGz/R1S7UsEDuBm4BVyUFMhexfWmCJfoMrDchIE9sC8B+oBFkwFE7mp89zVpq69Of94Q50kl3zaTJ5U92JNjwMUF+avpknOpTbHs7eb8Gi/dBN43kGDYjHkVsKlGm2FZoJ3y3LaAg/IkelYH8Jjc5TWi3jqAQyaK97sVjWQx00kexqbatw+w1tK/CjyfOldFNyRb98lmNme0wZfJ2jm2F9gmCYKdlzNlfpyVcqP6AewBDgILZN5bBuvZQRPFLyd0DPwF9s+W+p1o6SYAAAAASUVORK5CYII=" />
-                                </svg>
-                            </span>
-                            <span class="visible-sm visible-xs" id="disnone">交通</span>
-                            <span class="hidden-sm hidden-xs" id="disnone">交通工具</span>
-                        </a>
-                        <a href="#" rel="37" name="mode" class="default">
-                            <span>
-                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                    width="40" height="40" viewBox="0 0 40 40">
-                                    <image id="景点_历史_城墙_拷贝_4" data-name="景点、历史、城墙 拷贝 4" y="-0.5" width="40" height="41"
-                                        xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAApCAYAAABHomvIAAAC6klEQVRYhe2YPWgUQRTHf3eeGiWXxKCQRgQ/okjgNrAqKiJqoYWgWIlfWMRCCxuxs7CzUQyksbQQRBs9sLBR/AgY4gm7opWF4BeIEjUehzF3F3nyTtZjb3duN5tLcX9YdnfmzZv/zM7839tJ7b9zEEOkgEPAHuAlcM20oWIBcB1IA0drhbZrBTZKN9nJZuA0sK/JdoIKcAw40kyjjIGNDMIGeoF1WtYH7AYWGvZTBRZ73qXtUmAU+B6XYAcwDGz1lG0BHhiS80Ot7U7gSZChySeu6pUEKmE+TdfgTEIEy2EGrSYYiiCCshGeAo5ukiRwq5Bz3hZyzplGvoM2SRewAVieEDnBKr2vbWQQRPADMARkgQtAP3ADuKeiLRDyI/os+vhN634DEgFOqJ9TQLfaiU1e1eEy8Bx4HYVgSR2JzUklOA7c9tisBK6oHt4EJj11vUrwPXC/zndRCeZt1xoN4BBIMKsdyMjX6MzsBZZ4ZnAZsEifzytBqZsGdmn5akDWWKe+T+ryEQwVcs52YMx2rcd+JIJisTgeA1YEjXCWMGK71lk/V34zmNWQ1hchVkdFTyHnDABTtmu9CSM4qKHIJAzOFo7r9VCzpX/wmyEJP79kNHMo0BVdt8X6Cj+C46pPm4Avc8Pvb27Zo+nYf/D7jDKSCU2HkkoS6lG0XavkV2GyzkR0z2kWXcM24BLwGTgcMJBpTXKHNTEYVH0U/FDhH/D7tCYEZ/SStfgMeOGpq+mYOH4UMsCS5/6qru6jEmyYtGY0BV/vMwtdKjkdKrTvPHX9epdQdzFgM5U9WXinfomaYAvhjfp8oJBzun0mrCxCLRntjsYT0FKU03Xxc14SnNdoE4yLuPG2arCGM56d2zTiEvyk4ttIqKc0+OdbRVB07muIzUScDuKuwZSBD9PjEV+0d3FctAnGRZtgXLQJxkXac4wRBSZtY/lP1x1uR0GSkSQlsfgqcDfiL+ZPg3Nm+VGSfxE5DGgOUPkDhRKSnl3SJTYAAAAASUVORK5CYII=" />
-                                </svg>
-                            </span>
-                            <span class="visible-sm visible-xs" id="disnone">艺术</span>
-                            <span class="hidden-sm hidden-xs" id="disnone">艺术文物</span>
-                        </a>
-                        <a href="#" rel="39" name="mode" class="default">
-                            <span>
-                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                    width="40" height="40" viewBox="0 0 40 40">
-                                    <image id="汉堡_拷贝_4" data-name="汉堡 拷贝 4" width="40" height="40"
-                                        xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAADjklEQVRYhdWYa4gNYRjHf3uMdRnXFetSLpt7SGGIXMe9EPFBuSURQgqx4YOikLKhJFGL8AEfXDZpXNooo1AuuSTCuiaJQRbpOT2jacycc2zZHf+aOued9/I///d5n/f/nLyt5eOpAgqAVkBvoBPQAGgMtACuAeeAMYABPAGuAy+B1+GlPMfKuLqRI7cUMBAYAgwD+gJNY/ouB54BnYHSIBclfwU4D1wGvmZbOJuCHYB5wHT9nA23gF7ap46SqhUzpgI4AezxHOtW3Ly1Rs/tFNUu6mwADqlivloO0FwXj0IhUFd+OFCiKgYh6n3SORoBsr8L84sqWuUXVbiVj9t44QlTEatMAe4AK4Ha2vYTmAmMBPoAbzMouVpjcFyofS8wCOgOXAq9WwDcM213ZjaCa4BjegCCqAQO6veHwP0MBOOwL9B+KqKP7FKpabsb4wiuAzbFTC5bugNoDcwB+lWB4BY98TJ2YYZ+xabtbva/+IdkhMZXNlQGtv1fY6LnWCd9Bfdl6eyjusgJ9pu2m5fSwG9XjQvnimbAJCE4PIHkfAxLaQpJKn4KwSYJJlggd/FZzf7fE0AoCOFWZmjSjEqc1YJsbibqqksURMGWQBHwuSaImbYb96q+eEkhuBhYW720csb2VMK3OU8U/FbDJJ4DV9Ufjgq9qzTUZKK1g6ScG5obLfVuXXNY5AFwGHDVikn8TFOHFIcXaor3e46VFsm03cFaDvwuRQw1p8XAthg1xenMAKYCDQPtcqhOAgeA0xHjxMa/UZsWxm41th+CacZzrHLTdsW4zNem9BbvyqLOeX1WKVkxs6+AC0ogE3bquxV6GVzU9cozjNkaIFgQLppkkp5aQt7T+PgbFOojrvtLYFw+UE8Ui5hrADBavWaJ51ifTdvtp/F41d9riZn1wKyA3ZeS8Igql6kGkTkma/UnNYepFZuocEb7fIsIHxFC7P2EQJvMY3mOdU1L1LSjliA4CrSPIfBWZT8OPNI2qcq6AWP1MHSMGTtFS8sgugCLgCVa/YUhcT3bc6z3PsHtwLIMCvn4rgW574AkDHLBJT2Iss09gP4xxIJ4B9yUE27ExEUUjByL9zCG6vM3EDdtA09TodSRNPwwNMneTqgfvGto0txdUyz+ez/oE8yvYR5/wLTdNCdJM0v1Lv6ULIrphF8iMdg2cEUlDe1TCVQuiI//zSFJLFJ6rSQVzZP9zwKU/QJJf8o56BjbjQAAAABJRU5ErkJggg==" />
-                                </svg>
-                            </span>
-                            <span id="disnone">食品</span>
-                        </a>
-                        <a href="#" rel="41" name="mode" class="default">
-                            <span>
-                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                    width="40" height="40" viewBox="0 0 40 40">
-                                    <image id="_1火箭11_拷贝_4" data-name="1火箭11 拷贝 4" width="40" height="40"
-                                        xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAEaklEQVRYhb2Ye4hVRRzHP3tvPrIVekAvikKtqFaF3rRKRZ1eRlht+aAyDIvaP6KUgu1hhx4uPf6JDm4hG1FhD8Si2Iq1iLBIc0ktpAcVWmlaaVpZmdcbv/geGU4z597de65fuJyZO3Pmfu7Mb+b3+01L9ad2mqz9gXHA6cCxwHHA4UArMBz4HdgBrAe+1GcgTqJNhtUsQPvxmcBlwKnAkYN8fxewKE6izqIBjwFuBa7XLDWq4/crCMzGuR+4ExhW0JimyUUAngv0ACfk9DH7GgC2A6OBibLFWmprFPAe4IGc9q+A+cDr2gypRgAXA/fKRkMa14gNvghMy2l/E7ga+COnTwvwLHBdoH1VqQbEAcAk4EpgKnCWGa5+PA/uM+BSD9yBmXo1TiLbUO8FxhkdWuJLgNlmpMBhNf6ET3My310L3K5d/g3wKPCK0z5L5jA8896w7AyWNOV9QMcQ4T4APnLqNwDPAacAh+jAftldgTiJNgCvesaquoA2mx/qDGtE/c67o4DuwFjdmSNpmafPThfQ7OrMBuFMm5zy0TmrYG7v0MB7qbamgJ3ABQXAkbGjzcBvgX5bDMCpj/D0WV+SM3+sIDjTyU75V+DhQL+HgD+d+kmePp8b4HRgZIGAlwNlp96tA3mL6raUdwFPZN67yjPWQEnnVZGyyGVeZrwHgROB8Xo+4jbO7+yfIffn6m/btOZJ1gATCoasAOfoyKkl8+Efy0e76ouTaErJ01CEyjpuZtYYa4r+hI9hMTr7/mkCINp8L8hLLNYs7ZD7nKiD+orAuzuBJSngj/KvzdKF+qCIZpQ8Vp6ejJPovx1uHVcGOu5pAnBrHXB7XO9Tkp90tQ7ociKR3U0AzdOCOIm2uYBrFRFvl8Nu0xnVqj4WCt24j+A2K8Ddq3S6bwHGymireraozVxV7z6C7IiTqOIDNP3ilFudcurEe5WxNUv3xUm0PDt2yGAPdspjnPLCJkEuiZPIm9uEADc6ZUtunnLqC2USRemNOIk6Qo0hQNvZS536TcDTTr2nwJnM/bMhwIoSJTcMn5OBLGomxw8G8A7gC+A01W03v5aBdJe7p4DdPSav0QW8DXhcbq/qfD81M5PZ5e5VHrNriICVvMY07ZynVNB0ka4pUGy3UTO5VLBoJo8CvtMlUdkzdr3aUA/gbD0tL3lH5RXAGUp8vhfkS8A1arfcuVHtzqSoQcBIYf/Xqr8ruHUKkVJN05LM8Iz11xBSh/44ibbmdUgBf3C+s/z0PEU5kxQvjlVQuVpBaL+Wv6LM7FNdVnYNEjCUM/8PMNVbwPkKLicLrk0AyNYsHHrGM9aiQcI9D7xfq1PJefZpg9jMna1dOUGwprszuztVWddrvrQxpE9ybrS8gMtk9KuAdhnvEcAa2VWX8lsf4EFa3nr1tn6jLqWAZc1UuxOgVhQrLtAnJLNB91wM6Wdgrny7m7DnKrVBSxGzskQ7m6v6ZDZ5s27F7CiyjWX3MXaVYUHwt7Jts7m9kXJdAv4FRKD2QaqfAosAAAAASUVORK5CYII=" />
-                                </svg>
-                            </span>
-                            <span class="visible-sm visible-xs" id="disnone">航空</span>
-                            <span class="hidden-sm hidden-xs" id="disnone">航空航天</span>
-                        </a>
-                        <a href="#" rel="56" name="mode" class="default">
-                            <span>
-                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                    width="40" height="40" viewBox="0 0 40 40">
-                                    <image id="游戏_拷贝_4" data-name="游戏 拷贝 4" y="5" width="40" height="30"
-                                        xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAeCAYAAABe3VzdAAADYElEQVRYhc2Xe4jMURTHPzsNS96W3SWvyNrk1cZGebSSJPGHyGO9icTGljLrMU3UhBDF/uFZQoQ/5JGUSeSx/hF/IGyivNYuS4u1sjo6U9e487szs7utb92593fuOed+5/zuPff80uqvp+OBqcAyYBzQTtUqgDNAGHjlZWygJ7AWmAH0UPEb4BZwIBQJXIlnGI9gS+AsMMVj0RpgNXDEQW4xsAdo66FzKBQJLLVN+OIY3HCQE7QBDgMHgfaWeSF0VBZ3kBMsCRaEz9smbBEsBVY4HMbiHbADuKp/ehJQBHRL0s/mUCSwxYvgIOBhkk4bG/1CkUB51GfsK97RzOQE280HM4K9gRfNQulfZIYiAckWf0VwocPoKXAPqGrg4j81A/zy0CmMDkyC0+MoyykdCuQA+UAvYBHwKUWC64A+wGkPnZmxBGXRwRbFEk3UDwxZjaYPIZ1KNCW5fwAqPXRGBgvCmSbBcRalm3pboCEvU+elavcSmJcCwa7ad3HojTUJ5lsUtmk/GzgGjNBrSnLkOZ27BDxzLFQLfAa+Aj/0DQg+AnUqr9axiVEmwWEWx2XaBy1z04ABOr7jIDgHyNAmUTuh8iJDLm13jF2e/PiBFsBAi+N67f0OAvWO+Uo9udK+G3KJWF0oEvjzECwIf4mxGxQsCPslD+YCjyyOJwOXgZXAvpg5udIm6vixEU0bqmKIFQOngJ3ALEPezqiYosiR6PSP47hECe4HOgBrNJoXgOWqM8FBTtA55jlDe8kc3R22OT69QWwYDWxQuZzmLG0LNCJSCJx0LGBDtcoSSVF9vQgKtuoJztNn2UdyN87X3OhKFTakqSwtAd2+sgdPmZnbA481RfROkVgUbzWK2bp1vHDOr4qJILcBpExkJ7Fmts/I7P8jMnwJhLk50UFecesUCEipdBu4D5Rrq9TTna4+O8km1/0qh2y4Jc+5kO73+HCKh1KtepMtbjM0l25MwsYn5L4lYVCsN0sqlbdEeBMwNwmbWp+jLjOxzXKhpwIpFlYlaFfl01LeBakN1zcCuSjkbj+egF65ELzoUKrQ79zGRmGcIsXENblJWumeyrIovNbK9nkTEBR01LrTVrBIOfYnUUtqGAPcNSalnN8LDGlCcgL58JJieRfw3pA/AcaHIoGq3+lMuDPfHT7LAAAAAElFTkSuQmCC" />
-                                </svg>
-                            </span>
-                            <span id="disnone">游戏</span>
-                        </a>
-                        <a href="#" rel="73" name="mode" class="default">
-                            <span>
-                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                    width="40" height="40" viewBox="0 0 40 40">
-                                    <image id="星球1_拷贝_4" data-name="星球1 拷贝 4" y="2" width="40" height="36"
-                                        xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAkCAYAAAD7PHgWAAAEdElEQVRYhb2Ye6hUVRTGf3O7ZtlD63JrKg2iUCEqKjIyKKIieodhlqUQctMkrT8kqP6YfcCkB9U/QReK0J4GEYVlURSpZfkqJai0rAzFU1ppFFne28SCb8dme86cc2YGPxhmZp999v7OOmt9a61daw7SCY4CjgfOBg4FDgGGgSHgM2AXsBdo5u2RpK7l9r1tkpsI3ARcB5ygTy2asxNIgXXAi8CnwD9VN6pK8HJghsiNLJjriZt1B4BvgMeBJcC+shv2lJw3BngZeFcEi8jFMOuOB8yhvgRu7ibBK4GvqixagFP0sA92StCu3Q28BdS7RC7E/cCrjbpraaRWF6+Qz8TO303cCHzQqLvDqhKcDCyv4KOd4GLgyTxLZg2eBCxtsaFF4L9dJjkLmJB1IYvgY8C4jPGXZNlTgdOBuxQ83cLbWevEmcSstz1j3j32GpQlQhwu4jfkkNyh+0xvb8uzUoAHktQtakXQ/s2ObnoemKnf04BrgO9k6d+VVT4C+qL79gNnAl/rv1n9c2BEC4K27gVJ6n7OI/gTcFx001hZwpz5w2D8NWmjEVkDTIruexO4NhrbBpzcgqDhej2EZatNYaozAkdHk1PlVHRDCHuto4HdwNYMghOj/z0qLoowKN01eZsSBsm5QKxHowMd3Bhds5T1l34fm7HpacAzysfjpKnHlCAYFh41b0EjelHGZAuCW4AXgKeB81Qw/ADMB/4UudhaHrMkxrbPkSXIxdjhCdYyfM/DovATvcY7gprPY2qOLHmMaYOY+fVzwILQB/Oiy17zCuBOYFlArl9jrsvp8BdTjSR1lslK14Omj2/Iktvk7CbaWb7XLixDPQUsSlK3268REhwqWLgmUpO7SAq1A/bgA0nqLPBo1F1vkrqhkGBTknIwYfl8PfCwvZ0kdcONurNAskyywPPwMmOTVx1Ecl8AVylrmOD3NOpuHrAFmJek7v/eJXzFm+QHubVZh9invL0YWO2DrVF3U4B7JfTmRu+F24QE31eL2G2CW1XiL9ZvD5On+9RUhXgijyBBU9QprIh4B3hdOftvrden/D09J9i+lV8eQHC+NO2IDojtAT4GXpFe7gmunaVcPicnLXo8m6RuVzhg1cyFKpeqwiJ/jYrWpWrQfwvWGClSs2WtIjHfmaTuxHiwt2QWGFbVYnq1GVgLrJTqh8cavkyarrzdX+GhL8ka7JX15iqxW8b4Efge+EPnK1YjblClHYv5KLUAl6kLPKciKY9BnTwcgLBgrUkX47I+RL8a70uB81WijW2DUAhLoVOT1O3PuhhGcTODnFUij6haMec+QyVYGayQZeaoGI5h+y1JUnd7q7WKioW96hMGSpLyMGvcqlZhbaR/Hnay8FDRQkWNeVOL9Kk6LosRKnRH6TvEOh3bFZIrQ9DjV1nxaqWrosrH8Kgq7oV60A3qCidJJ0uh6vngcn0WKtlboJjGWZNjlXYIyybWcFnbat2gSVTlE4l2T1hNnO1jkW9RbJpnwePbAfu24sNSl1mxPQD/AVN2B1GNf3PwAAAAAElFTkSuQmCC" />
-                                </svg>
-                            </span>
-                            <span id="disnone">宇宙</span>
-                        </a>
-                        <a href="#" rel="81" name="mode" class="default">
-                            <span>
-                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                    width="40" height="40" viewBox="0 0 40 40">
-                                    <image id="CPU_拷贝" data-name="CPU 拷贝" width="40" height="40"
-                                        xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAEk0lEQVRYhc2Ya4xdUxTHf/e6rbTodCgNQRDUbY3x6CRCQmgwqEqJNjrJ9UU1aEKkRFDX9fhAiniOD4icaCmfqGkJwyRt06j3o7mkIhKlhvnQ0qYe0xlZ0/9u1pyec+Y26b0z/+TknLP263/2Xnut/z65wfknIVwHLAJmAgeRjJXAjcBLwDzVWKF2ETBXtleBm4HXgNmyvQzcpj6uSOn/P2Aj8HylWHrbDHkVPAi8AcwCmoBDU64pqn+kKw+2o0awHZFgi1/NwGXAW+VqdK9VLgCXAktTviiOcXof5+yFGm1JbbPwcLkarbUl7gEuVMWdwN3A5pSGW4GvgTOAo2X7FfgGOBOYKtsvwLfAWZoxwxZgE3C2ViAJM4CKZtXQZQR7XSdLgMdr/MIDgkqxNOy9XI2WyuUMP+VjU/5DI8mlYKszjzdf2e0Mh7nnE+Ww/wKDdSKTK1cjm6CuSrG0RbZDXPnuQkpDw0VAZ52IxWEh682kgnxGo50NobYHu9IKsgjWa1n3a6y8C7SGSY3hk4lmV3ic+eCTyh454PMxQHAt8AowAPxhBO8YA6T2olIsdQPd4b2gxN6sGXwM6BlNguVqdJWEhvnlb0aww5WvGm2CSoWXh5f4Ls41ns8+GMbBZvApLXF+hE0yIBdYD0wEFgBXq8yc+itlJbtagBuACZJxHwE3STz0AY8AxwB3JoyzDliufnq9YI1jnsSloR84X2LS41ngVqBVKsejRbbrgdeBZ4DFUjktqhfi3+xKsdSVRCJskhBmlqX44KMiN0vK+EelQhvwFmC6yHTLh64FPhSZNhFsUl/jdT8hiVC5GrWrXyPfG98kq1MILtf9OeB4Xd/bLtOH/aXy7cA/7siQlanS/N105ZV+BmtpFAhMdrZTgZN1jgiErnHlbZrZIDgm6H6w7v21EC9IwU7WIBtSGrVKEUfOsU09/y5REdLlAsm0Y4GFsm3T/U83Jhn5t0e+PRCW+IGUih73mWYD7tJu/Y495M7Rjg5C9x7Jdo92+fliRYkwCe1JA1WKpQ1+ogryryASnlBIiONcOfoS54/n2elLz5NEtC+hbYdCxwvy4UBuWRLBcjWa42a/r6BlCViTQtAwX9cncn6bvQCbob+Bw1PadmqlNsudTk+ph6JAOEvvs0nSDuwebQm2JhdG0jDVnfqyMIyDEbzfnQPW1dBBvfGuO8htN4IPjQFSe1EpltYrnQ6hoOg/Ue/mJ++NJsFyNTI/v12vQ2HmYleemH4ajGmKGkOw3bjDjb9jtNkpXQb8nJUra9nRBwqpPMYKwdSxChkkbbtfoJxYT+T01ysJuXig3uae+3QErCvif7diPpjPOylFSpZoNFrdeLtM8nfF/hk/LTFaiGkzU8JfAB8Al0hY4mx2XDxNbcz2PjBHYSNeb5p0ZMCgziAzdOQMWGkEZ0oA1IJ3NID/qFUi8qkTEGtU/pmSP67txv1Yqel5dbywhsq4f4n9I9jC80j1stBRKZaqYZO8KDEZjoaW+vyPTYMt8Zd6tvsp7tnwsX6A2hLHbb6ezaApH7/EBuNi6txWs7NSLG0C+B9MNgh/YXKstwAAAABJRU5ErkJggg==" />
-                                </svg>
-                            </span>
-                            <span class="visible-sm visible-xs" id="disnone">电器</span>
-                            <span class="hidden-sm hidden-xs" id="disnone">电子电器</span>
-                        </a>
-                        <a href="#" rel="85" name="mode" class="default">
-                            <span>
-                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                    width="40" height="40" viewBox="0 0 40 40">
-                                    <image id="钻石_拷贝" data-name="钻石 拷贝" y="2.5" width="40" height="35"
-                                        xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAjCAYAAADmOUiuAAAESUlEQVRYhcWYeagVVRzHP09TqShbKIsMC2wvIiqQgrJo+SllYdlGREpSVqaFZIF2HVteufAsH2lIi5HQYlSWMQUvUyorqaAMEh71T6u2vFdq8TKNX3wnDvPmzsyde8UvDGfumbN8z28/t23XqFGUwKHABOA64KQyE3LQBTwJvOlDIrPcwUUEzwCWqG01fgJeAe6PzL6vt/aAgk1/Ab7YDeQcw4ADgb/zBtUjeLbab4BJwOHA48A/LSC2GZgFHABcE5ltqcXx5bU4Pj1rcFrFg4DlwLXABmAu8EbwfQRwDnAasD+woyQpX7cH+AR4Ddim/lOB+4DxwC7gwsisqx5B33QFcEJq8beAdmBtSTJlMExSvD1j7JTIbGlI0NU8BegsWPhl4DFgXZPk7nTnBfbLGfOoSzYy+30vYCbwUImFrwCOBtxWLgHmyyZ3qN2pNut9oDx2sYjlkXNMA7a6lJ3g84C7+fXABQUTF6m9FTi+xKFCnAcslV3fptiaha+BBdJYPyc5E7gJuEpeFuJPYB/93g7s3SBBpK15wM0iG2KztLIoMvvP+WpxPMIJenZwST4bDD4IuBG4QZ6GHMilfCXwUgVySG2Jev8ChgC9QAewMDLbKmLHyieWDJwzfLjbxyrgUuA7oFvSWq9TfgYMVUbxuDgbOLkiwcEKMR8AfcCPwLjIbPXakSP7anE8dHR3t6//IrApMpudqPg44Cst8hHwhOLhzoxNjtHJXQ1tCvb+hO/1nkEi+GGymOfiWhy7uUwHZkh7GyOzU0jZ4JgkgQsuyaeAZcDPFSVWBneI2JEa6wc4IjLrTRN03JsRcn5TtO+Uk8yQ/bjEGnkGyLFWA+8AhwHvSnshRkdm/yeFrGpmpWJeGgcDf+gZ0oTEzpJ9L5cThqhFZnPDjqxiwb10U0b/fFUeE5ogt07kDskgtyZNrh5BFFT7Un2T5M2vqwyrggVqH0z19yqK9EM9gj8AYzP6O9TOq8CuR4dzO56c+jYmMtuWNSmvYO2SQ4SYCOzrQbUCwWVq09K7JzJbX29SUUW9UBkkxGIVAen+Ijys79OCcXFk9kjevCKCKL1tDH5PVEZISzcPHwO/qsxq0ziPreOKJpYh6DhfsS9Bp9LUpyXn3612VtA3tug+0gjBLV6OB78nSxK3lJi7XdX41GC/6bpSFKIsQcd7SksJXIobSoScdrVJiFmlirkUGiGIHORpvXvRiqSRhwdUXw6WWYxvZMNGCaKAnajH4+JzOWPfVpsc6qJGr65VCCYbuW0l0muvM86d4zIF56lV/gSoSrBHno0u9P1yqIrfz4FXVb0U3RpbShAVtnfpyupl/Aup73MkNUpcxnYLQUeHKpRngDAjeHz7Viq+WP8a7BGCjnMBv+ScCLyvvpUygRWBo+wxgo6rgaMCMr1KjzObXbhVBD3ludS8hvSs86VuZk3D78Otglfhbot+TV2TUfA2DuBfdBAQiSQc50QAAAAASUVORK5CYII=" />
-                                </svg>
-                            </span>
-                            <span class="visible-sm visible-xs" id="disnone">风格</span>
-                            <span class="hidden-sm hidden-xs" id="disnone">时尚风格</span>
-                        </a>
-            </ul>
-            <div class="cont_b hidden-sm hidden-xs">
-                <div>
-                    <dl class="cation-list sel_ms">
-                        <dt><span>面数</span><i class="iconfont icon-sanjiaoright"></i></dt>
-                        <dd>
-                            <a href="#" rel="" name="mianshu" class="all on">全部</a>
-                            <a href="#" rel="21" name="mianshu" class="default">5K以下</a>
-                            <a href="#" rel="22" name="mianshu" class="default">5K-10K</a>
-                            <a href="#" rel="23" name="mianshu" class="default">10K-30K</a>
-                            <a href="#" rel="91" name="mianshu" class="default">30K-100K</a>
-                            <a href="#" rel="92" name="mianshu" class="default">100K以上</a>
-                        </dd>
-                    </dl>
-                </div>
-                <div>
-                    <dl class="cation-list sel_ms">
-                        <dt><span>布线</span><i class="iconfont icon-sanjiaoright"></i></dt>
-                        <dd>
-                            <a href="#" rel="" name="buxian" class="all on">全部</a>
-                            <a href="#" rel="20" name="buxian" class="default">三角形</a>
-                            <a href="#" rel="24" name="buxian" class="default">四边形</a>
-                            <a href="#" rel="93" name="buxian" class="default">N边形</a>
-                        </dd>
-                    </dl>
-                </div>
-                <div>
-                    <dl class="cation-list sel_ms">
-                        <dt><span>筛选</span><i class="iconfont icon-sanjiaoright"></i></dt>
-                        <dd>
-                            <a href="#" rel="" name="shaixuan" class="all on">全部</a>
-                            <a href="#" rel="15" name="shaixuan" class="default">原创</a>
-                            <a href="#" rel="16" name="shaixuan" class="default">免费</a>
-                            <a style="display: none;"></a>
-                        </dd>
-                    </dl>
-                </div>
-                <div>
-                    <dl class="cation-list sel_ms">
-                        <dt><span>排序</span><i class="iconfont icon-sanjiaoright"></i></dt>
-                        <dd>
-                            <a href="#" rel="" name="px" class="all on">综合</a>
-                            <a href="#" rel="zuixin" name="px" class="default">最新</a>
-                            <a href="#" rel="jiage" name="px" class="default">价格</a>
-                            <a href="#" rel="remen" name="px" class="default">热门</a>
-                            <a href="#" rel="xiazai" name="px" class="default">下载量</a>
-                            <a style="display: none;"></a>
-                        </dd>
-                    </dl>
-                </div>
-                <div>
-                    <dl class="cation-list sel_ms">
-                        <dt><span>价格</span><i class="iconfont icon-sanjiaoright"></i></dt>
-                        <dd>
-                            <a href="#" rel="" name="mf" class="all on">免费</a>
-                            <a href="#" rel="" name="mf" class="default">1~50</a>
-                            <a href="#" rel="" name="mf" class="default">50~100</a>
-                            <a href="#" rel="" name="mf" class="default">100~500</a>
-                            <a href="#" rel="" name="mf" class="default">500以上</a>
-                            <a style="display: none;"></a>
-                        </dd>
-                    </dl>
-                </div>
-            </div>
-            <div class="cont_t hidden-sm hidden-xs">
-                <span>精品模型</span>
-                <span>boutique&nbsp;model</span>
-            </div>
-            <div class="cont_c hidden-sm hidden-xs">
-                <a href="#">
-                    <img src="./img/szr.png" alt="">
-                    <span>
-                        <div class="lin_l"></div>
-                        <div class="lin_r"></div>
-                        <span class="lin_text">数字人</span>
-                    </span>
-                </a>
-                <a href="#">
-                    <img src="./img/szr.png" alt="">
-                    <span>
-                        <div class="lin_l"></div>
-                        <div class="lin_r"></div>
-                        <span class="lin_text">数字人</span>
-                    </span>
-                </a>
-                <a href="#">
-                    <img src="./img/szr.png" alt="">
-                    <span>
-                        <div class="lin_l"></div>
-                        <div class="lin_r"></div>
-                        <span class="lin_text">数字人</span>
-                    </span>
-                </a>
-                <a href="#">
-                    <img src="./img/szr.png" alt="">
-                    <span>
-                        <div class="lin_l"></div>
-                        <div class="lin_r"></div>
-                        <span class="lin_text">数字人</span>
-                    </span>
-                </a>
-            </div>
-            <div class="cont_tt hidden-md hidden-lg">
-                <span>精品模型</span>
-                <span>boutique&nbsp;model</span>
-
-            </div>
-            <div class="cont_chd hidden-md hidden-lg">
-                <span data-toggle="modal" data-target="#dia_right">筛选</span>
-                <!-- 筛选弹窗 -->
-                <div class="modal fade" id="dia_right" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-                    aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h4 class="modal-title" id="myModalLabel">模型分类</h4>
-                                <!-- <img class="close_r close" data-dismiss="modal" aria-hidden="true" src="./img/close.png"
-                                 alt=""> -->
-                            </div>
-                            <form name="myform" id="myform" method="post" action="#" onSubmit=""
-                                enctype="multipart/form-data">
-                                <div class="modal-body">
-                                    <!-- 存精品模型分类选中的值 -->
-                                    <!-- <input type="hidden" name="mode" id="leixing" value="" /> -->
-                                    <!-- <input type="hidden" name="leixing" id="fuleixing" value="" /> -->
-                                    <!-- <input type="hidden" name="fuleixing" id="threeleixing" value="" /> -->
-                                    <input type="hidden" name="mianshu" id="mianshu" value="" />
-                                    <input type="hidden" name="buxian" id="buxian" value="" />
-                                    <input type="hidden" name="shaixuan" id="saixuan" value="" />
-                                    <input type="hidden" name="px" id="px" value="" />
-                                    <input type="hidden" name="jg" id="px" value="" />
-
-                                    <!-- <div class="dia_t">
-                                        <div>类型</div>
-                                        <div class="dia_t_list">
-                                            <div class="t_list list_b" rel="" name="mode">全部</div>
-                                            <div rel="6" name="mode" class="t_list">人物</div> -->
-                                    <!-- <div rel="7" name="mode" class="t_list">场景</div>
-                                         <div rel="8" name="mode" class="t_list">生物</div>
-                                         <div rel="9" name="mode" class="t_list">建筑</div>
-                                         <div rel="10" name="mode" class="t_list">医疗</div>
-                                         <div rel="11" name="mode" class="t_list">军事</div>
-                                         <div rel="13" name="mode" class="t_list">工业</div>
-                                         <div rel="36" name="mode" class="t_list">交通工具</div>
-                                         <div rel="37" name="mode" class="t_list">艺术文物</div>
-                                         <div rel="39" name="mode" class="t_list">食品</div>
-                                         <div rel="41" name="mode" class="t_list">航空航天</div>
-                                         <div rel="56" name="mode" class="t_list">游戏</div>
-                                         <div rel="73" name="mode" class="t_list">宇宙</div>
-                                         <div rel="81" name="mode" class="t_list">电子电器</div>
-                                         <div rel="85" name="mode" class="t_list">时尚风格</div> -->
-                                    <!-- </div>
-                                    </div> -->
-                                    <div class="dia_t" id="txtHinterji" style="display: none;"></div>
-                                    <div class="dia_t" id="txtThreeattribute" style="display: none;"></div>
-                                    <div class="dia_t">
-                                        <div>面数</div>
-                                        <div class="dia_t_list">
-                                            <div rel="" name="mianshu" class="t_list_ms list_b">全部</div>
-                                            <div rel="21" name="mianshu" class="t_list_ms">5k以下</div>
-                                            <div rel="22" name="mianshu" class="t_list_ms">5k以下</div>
-                                            <div rel="23" name="mianshu" class="t_list_ms">5k以下</div>
-                                            <div rel="91" name="mianshu" class="t_list_ms">5k以下</div>
-                                            <div rel="92" name="mianshu" class="t_list_ms">5k以下</div>
-                                        </div>
-                                    </div>
-                                    <div class="dia_t">
-                                        <div>布线</div>
-                                        <div class="dia_t_list">
-                                            <div rel="" name="buxian" class="t_list_bx list_b">全部</div>
-                                            <div rel="20" name="buxian" class="t_list_bx">三角形</div>
-                                            <div rel="24" name="buxian" class="t_list_bx">四边形</div>
-                                            <div rel="93" name="buxian" class="t_list_bx">N边形</div>
-                                        </div>
-                                    </div>
-                                    <div class="dia_t">
-                                        <div>筛选</div>
-                                        <div class="dia_t_list">
-                                            <div rel="" name="shaixuan" class="t_list_sx list_b">全部</div>
-                                            <div rel="15" name="shaixuan" class="t_list_sx">原创</div>
-                                            <div rel="16" name="shaixuan" class="t_list_sx">免费</div>
-                                        </div>
-                                    </div>
-                                    <div class="dia_t" style="border: 0;">
-                                        <div>排序</div>
-                                        <div class="dia_t_list">
-                                            <div rel="" name="px" class="t_list_px list_b">综合</div>
-                                            <div rel="zuixin" name="px" class="t_list_px">最新</div>
-                                            <div rel="jiage" name="px" class="t_list_px">价格</div>
-                                            <div rel="remen" name="px" class="t_list_px">热门</div>
-                                            <div rel="xiazai" name="px" class="t_list_px">下载量</div>
-                                        </div>
-                                    </div>
-                                    <div class="dia_t" style="border: 0;">
-                                        <div>价格</div>
-                                        <div class="dia_t_list">
-                                            <div rel="" name="jg" class="t_list_px list_b">免费</div>
-                                            <div rel="" name="jg" class="t_list_px">1~50</div>
-                                            <div rel="" name="jg" class="t_list_px">50~100</div>
-                                            <div rel="" name="jg" class="t_list_px">100~500</div>
-                                            <div rel="" name="jg" class="t_list_px">500以上</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button class="close_r close_c" data-dismiss="modal" aria-hidden="true">取消</button>
-                                    <input type="submit" class="btnn" value="确认" />
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="cont_d row">
-                <div class="cont_dd col-md-3 col-lg-2 col-sm-6 col-xs-6">
-                    <a href="#">
-                        <img src="./img/text.png" alt="">
-                        <div class="show_a">
-                            <span>非对称双方</span>
-                            <span class="hidden-sm hidden-xs">
-                                <span><i class="iconfont icon-dianzan"></i>&nbsp;66</span>&nbsp;&nbsp;
-                                <span><i class="iconfont icon-yanjing"></i>&nbsp;99</span>
-                            </span>
-                        </div>
-                    </a>
-                </div>
-                <div class="cont_dd col-md-3 col-lg-2 col-sm-6 col-xs-6">
-                    <a href="#">
-                        <img src="./img/text.png" alt="">
-                        <div class="show_a">
-                            <span>非对称双方</span>
-                            <span class="hidden-sm hidden-xs">
-                                <span><i class="iconfont icon-dianzan"></i>&nbsp;66</span>&nbsp;&nbsp;
-                                <span><i class="iconfont icon-yanjing"></i>&nbsp;99</span>
-                            </span>
-                        </div>
-                    </a>
-                </div>
-                <div class="cont_dd col-md-3 col-lg-2 col-sm-6 col-xs-6">
-                    <a href="#">
-                        <img src="./img/text.png" alt="">
-                        <div class="show_a">
-                            <span>非对称双方</span>
-                            <span class="hidden-sm hidden-xs">
-                                <span><i class="iconfont icon-dianzan"></i>&nbsp;66</span>&nbsp;&nbsp;
-                                <span><i class="iconfont icon-yanjing"></i>&nbsp;99</span>
-                            </span>
-                        </div>
-                    </a>
-                </div>
-                <div class="cont_dd col-md-3 col-lg-2 col-sm-6 col-xs-6">
-                    <a href="#">
-                        <img src="./img/text.png" alt="">
-                        <div class="show_a">
-                            <span>非对称双方</span>
-                            <span class="hidden-sm hidden-xs">
-                                <span><i class="iconfont icon-dianzan"></i>&nbsp;66</span>&nbsp;&nbsp;
-                                <span><i class="iconfont icon-yanjing"></i>&nbsp;99</span>
-                            </span>
-                        </div>
-                    </a>
-                </div>
-                <div class="cont_dd col-md-3 col-lg-2 col-sm-6 col-xs-6">
-                    <a href="#">
-                        <img src="./img/text.png" alt="">
-                        <div class="show_a">
-                            <span>非对称双方</span>
-                            <span class="hidden-sm hidden-xs">
-                                <span><i class="iconfont icon-dianzan"></i>&nbsp;66</span>&nbsp;&nbsp;
-                                <span><i class="iconfont icon-yanjing"></i>&nbsp;99</span>
-                            </span>
-                        </div>
-                    </a>
-                </div>
-                <div class="cont_dd col-md-3 col-lg-2 col-sm-6 col-xs-6">
-                    <a href="#">
-                        <img src="./img/text.png" alt="">
-                        <div class="show_a">
-                            <span>非对称双方</span>
-                            <span class="hidden-sm hidden-xs">
-                                <span><i class="iconfont icon-dianzan"></i>&nbsp;66</span>&nbsp;&nbsp;
-                                <span><i class="iconfont icon-yanjing"></i>&nbsp;99</span>
-                            </span>
-                        </div>
-                    </a>
-                </div>
-                <div class="cont_dd col-md-3 col-lg-2 col-sm-6 col-xs-6">
-                    <a href="#">
-                        <img src="./img/text.png" alt="">
-                        <div class="show_a">
-                            <span>非对称双方</span>
-                            <span class="hidden-sm hidden-xs">
-                                <span><i class="iconfont icon-dianzan"></i>&nbsp;66</span>&nbsp;&nbsp;
-                                <span><i class="iconfont icon-yanjing"></i>&nbsp;99</span>
-                            </span>
-                        </div>
-                    </a>
-                </div>
-                <div class="cont_dd col-md-3 col-lg-2 col-sm-6 col-xs-6">
-                    <a href="#">
-                        <img src="./img/text.png" alt="">
-                        <div class="show_a">
-                            <span>非对称双方</span>
-                            <span class="hidden-sm hidden-xs">
-                                <span><i class="iconfont icon-dianzan"></i>&nbsp;66</span>&nbsp;&nbsp;
-                                <span><i class="iconfont icon-yanjing"></i>&nbsp;99</span>
-                            </span>
-                        </div>
-                    </a>
-                </div>
-                <div class="cont_dd col-md-3 col-lg-2 col-sm-6 col-xs-6">
-                    <a href="#">
-                        <img src="./img/text.png" alt="">
-                        <div class="show_a">
-                            <span>非对称双方</span>
-                            <span class="hidden-sm hidden-xs">
-                                <span><i class="iconfont icon-dianzan"></i>&nbsp;66</span>&nbsp;&nbsp;
-                                <span><i class="iconfont icon-yanjing"></i>&nbsp;99</span>
-                            </span>
-                        </div>
-                    </a>
-                </div>
-                <div class="cont_dd col-md-3 col-lg-2 col-sm-6 col-xs-6">
-                    <a href="#">
-                        <img src="./img/text.png" alt="">
-                        <div class="show_a">
-                            <span>非对称双方</span>
-                            <span class="hidden-sm hidden-xs">
-                                <span><i class="iconfont icon-dianzan"></i>&nbsp;66</span>&nbsp;&nbsp;
-                                <span><i class="iconfont icon-yanjing"></i>&nbsp;99</span>
-                            </span>
-                        </div>
-                    </a>
-                </div>
-                <div class="cont_dd col-md-3 col-lg-2 col-sm-6 col-xs-6">
-                    <a href="#">
-                        <img src="./img/text.png" alt="">
-                        <div class="show_a">
-                            <span>非对称双方</span>
-                            <span class="hidden-sm hidden-xs">
-                                <span><i class="iconfont icon-dianzan"></i>&nbsp;66</span>&nbsp;&nbsp;
-                                <span><i class="iconfont icon-yanjing"></i>&nbsp;99</span>
-                            </span>
-                        </div>
-                    </a>
-                </div>
-                <div class="cont_dd col-md-3 col-lg-2 col-sm-6 col-xs-6">
-                    <a href="#">
-                        <img src="./img/text.png" alt="">
-                        <div class="show_a">
-                            <span>非对称双方</span>
-                            <span class="hidden-sm hidden-xs">
-                                <span><i class="iconfont icon-dianzan"></i>&nbsp;66</span>&nbsp;&nbsp;
-                                <span><i class="iconfont icon-yanjing"></i>&nbsp;99</span>
-                            </span>
-                        </div>
-                    </a>
-                </div>
-                <div class="cont_dd col-md-3 col-lg-2 col-sm-6 col-xs-6">
-                    <a href="#">
-                        <img src="./img/text.png" alt="">
-                        <div class="show_a">
-                            <span>非对称双方</span>
-                            <span class="hidden-sm hidden-xs">
-                                <span><i class="iconfont icon-dianzan"></i>&nbsp;66</span>&nbsp;&nbsp;
-                                <span><i class="iconfont icon-yanjing"></i>&nbsp;99</span>
-                            </span>
-                        </div>
-                    </a>
-                </div>
-                <div class="cont_dd col-md-3 col-lg-2 col-sm-6 col-xs-6">
-                    <a href="#">
-                        <img src="./img/text.png" alt="">
-                        <div class="show_a">
-                            <span>非对称双方</span>
-                            <span class="hidden-sm hidden-xs">
-                                <span><i class="iconfont icon-dianzan"></i>&nbsp;66</span>&nbsp;&nbsp;
-                                <span><i class="iconfont icon-yanjing"></i>&nbsp;99</span>
-                            </span>
-                        </div>
-                    </a>
-                </div>
-                <div class="cont_dd col-md-3 col-lg-2 col-sm-6 col-xs-6">
-                    <a href="#">
-                        <img src="./img/text.png" alt="">
-                        <div class="show_a">
-                            <span>非对称双方</span>
-                            <span class="hidden-sm hidden-xs">
-                                <span><i class="iconfont icon-dianzan"></i>&nbsp;66</span>&nbsp;&nbsp;
-                                <span><i class="iconfont icon-yanjing"></i>&nbsp;99</span>
-                            </span>
-                        </div>
-                    </a>
-                </div>
-                <div class="cont_dd col-md-3 col-lg-2 col-sm-6 col-xs-6">
-                    <a href="#">
-                        <img src="./img/text.png" alt="">
-                        <div class="show_a">
-                            <span>非对称双方</span>
-                            <span class="hidden-sm hidden-xs">
-                                <span><i class="iconfont icon-dianzan"></i>&nbsp;66</span>&nbsp;&nbsp;
-                                <span><i class="iconfont icon-yanjing"></i>&nbsp;99</span>
-                            </span>
-                        </div>
-                    </a>
-                </div>
-                <div class="cont_dd col-md-3 col-lg-2 col-sm-6 col-xs-6">
-                    <a href="#">
-                        <img src="./img/text.png" alt="">
-                        <div class="show_a">
-                            <span>非对称双方</span>
-                            <span class="hidden-sm hidden-xs">
-                                <span><i class="iconfont icon-dianzan"></i>&nbsp;66</span>&nbsp;&nbsp;
-                                <span><i class="iconfont icon-yanjing"></i>&nbsp;99</span>
-                            </span>
-                        </div>
-                    </a>
-                </div>
-                <div class="cont_dd col-md-3 col-lg-2 col-sm-6 col-xs-6">
-                    <a href="#">
-                        <img src="./img/text.png" alt="">
-                        <div class="show_a">
-                            <span>非对称双方</span>
-                            <span class="hidden-sm hidden-xs">
-                                <span><i class="iconfont icon-dianzan"></i>&nbsp;66</span>&nbsp;&nbsp;
-                                <span><i class="iconfont icon-yanjing"></i>&nbsp;99</span>
-                            </span>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="cont_e">
-                <span><img src="./img/xjt.png" alt=""></span>
-                <span class="con_move">更多</span>
-            </div>
-            <div class="cont_sjs">
-                <span>量子网设计师</span>
-                <span>Quantum&nbsp;Web&nbsp;Designer</span>
-            </div>
-            <div class="cont_f membership_list">
-                <ul class="membership_LUI">
-                    <li>
-                        <img src="./img/1.png" alt="" width="100%" />
-                        <h4>赵雅珍</h4>
-                        <p title="在工作中从完善到创新，是自己的价值，是自己进步的过程，是说明自己有信心，有能力迎接挑战的勇气。">
-                            在工作中从完善到创新，是自己的价值，是自己进步的过程，是说明自己有信心，有能力迎接挑战的勇气。</p>
-                    </li>
-                    <li>
-                        <img src="./img/1.png" alt="" width="100%" />
-                        <h4>赵雅珍</h4>
-                        <p title="在工作中从完善到创新，是自己的价值，是自己进步的过程，是说明自己有信心，有能力迎接挑战的勇气。">
-                            在工作中从完善到创新，是自己的价值，是自己进步的过程，是说明自己有信心，有能力迎接挑战的勇气。</p>
-                    </li>
-                    <li>
-                        <img src="./img/1.png" alt="" width="100%" />
-                        <h4>赵雅珍</h4>
-                        <p title="在工作中从完善到创新，是自己的价值，是自己进步的过程，是说明自己有信心，有能力迎接挑战的勇气。">
-                            在工作中从完善到创新，是自己的价值，是自己进步的过程，是说明自己有信心，有能力迎接挑战的勇气。</p>
-                    </li>
-                    <li>
-                        <img src="./img/1.png" alt="" width="100%" />
-                        <h4>赵雅珍</h4>
-                        <p title="在工作中从完善到创新，是自己的价值，是自己进步的过程，是说明自己有信心，有能力迎接挑战的勇气。">
-                            在工作中从完善到创新，是自己的价值，是自己进步的过程，是说明自己有信心，有能力迎接挑战的勇气。</p>
-                    </li>
-                    <li>
-                        <img src="./img/1.png" alt="" width="100%" />
-                        <h4>赵雅珍</h4>
-                        <p title="在工作中从完善到创新，是自己的价值，是自己进步的过程，是说明自己有信心，有能力迎接挑战的勇气。">
-                            在工作中从完善到创新，是自己的价值，是自己进步的过程，是说明自己有信心，有能力迎接挑战的勇气。</p>
-                    </li>
-                    <li>
-                        <img src="./img/1.png" alt="" width="100%" />
-                        <h4>赵雅珍</h4>
-                        <p title="在工作中从完善到创新，是自己的价值，是自己进步的过程，是说明自己有信心，有能力迎接挑战的勇气。">
-                            在工作中从完善到创新，是自己的价值，是自己进步的过程，是说明自己有信心，有能力迎接挑战的勇气。</p>
-                    </li>
-                </ul>
-            </div>
-            <div class="cont_g">
-                <span>合作伙伴</span>
-                <span>Partner</span>
-            </div>
-            <div class="cont_h">
-                <div class="cont_hc">
-                    <span>
-                        <img src="./img/teamwork.png" alt="">
-                    </span>
-                    <span>支付宝</span>
-                </div>
-                <div class="cont_hc">
-                    <span>
-                        <img src="./img/teamwork.png" alt="">
-                    </span>
-                    <span>支付宝</span>
-                </div>
-                <div class="cont_hc">
-                    <span>
-                        <img src="./img/teamwork.png" alt="">
-                    </span>
-                    <span>支付宝</span>
-                </div>
-                <div class="cont_hc">
-                    <span>
-                        <img src="./img/teamwork.png" alt="">
-                    </span>
-                    <span>支付宝</span>
-                </div>
-                <div class="cont_hc">
-                    <span>
-                        <img src="./img/teamwork.png" alt="">
-                    </span>
-                    <span>支付宝</span>
-                </div>
-                <div class="cont_hc">
-                    <span>
-                        <img src="./img/teamwork.png" alt="">
-                    </span>
-                    <span>支付宝</span>
-                </div>
-            </div>
+        <img src="./img/1.jpg" alt="">
+        <div id="b">
+            2. 在你孤独悲伤的日子里，请你悄悄地念一念我的名字(标标)。并且说：有人在怀念我，在世上我活在一个人的心里。
         </div>
-        <div class="cont_foot">
-            <span>备案号:@2020 量子科技 陕ICU备2020014308号</span>
-            <span>客服QQ:1234567890</span>
-            <span>客服时间:工作日9:30-18:30</span>
-            <span>举报邮箱:laingzikeji2020@163.com</span>
+        <img src="./img/2.jpg" alt="">
+        <div id="c">
+            3. 有一种感觉，它没有开端也没有结果，但它却时时刻刻占据我，那就是想你的感觉。
         </div>
-        <script src="./js/public_s.js"></script>
-        <script src="./js/min1.js"></script>
-        <script>
-            $(function () {
-                new SelectTag({
-                    child: ".default", //所有默认
-                    over: 'on', //当前选中
-                    all: ".all" // 默认全部
-                });
-            })
+        <img src="./img/3.jpg" alt="">
+        <div id="d">
+            4. 自从你出现后，我才知道原来有人爱是那么的美好。
+        </div>
+        <img src="./img/4.jpg" alt="">
+        <div id="e">
+            5. 就这样陪你一直走，再久也不会累；陪你在夏日街头漫步，为你撑伞遮挡阳光；为你递上一杯凉茶，让你倍感清凉。2022这个冬季，有你更美(豆豆)。
+        </div>
+        <img src="./img/5.jpg" alt="">
+        <p>作者：小白同学</p>
+    </div>
+    <div class="tex">
+        <input type="text" placeholder="输入低下提示命令">
+        <button>确认</button>
+        <div class="text_i">
+            <p>请输入下面指定豆豆命令：</p>
+            <p>1、豆豆专属文案</p>
+            <p>2、豆豆专属烟花</p>
+            <p>3、豆豆的相册</p>
+        </div>
+    </div> -->
 
-            // 下拉框
-            $(".sel_ms a").click(function () {
-                $(this).parent("dd").prev("dt").children("span").text($(this).text());
-                $(this).parent("dd").slideUp(600);
-                $(this).parent("dd").prev("dt").children(".iconfont").removeClass('icon-youjiantou1').addClass('icon-sanjiaoright')
-            })
-            $(".sel_ms dt").click(function () {
-                if ($(this).next("dd").css("display") == "none") {
-                    $(".sel_ms dd").slideUp(600);
-                    $(this).next("dd").slideDown(600);
-                    $(".iconfont").removeClass('icon-youjiantou1').addClass('icon-sanjiaoright');
-                    $(this).children(".iconfont").removeClass('icon-sanjiaoright').addClass('icon-youjiantou1');
-                } else {
-                    $(this).next("dd").slideUp(600);
-                    $(this).children(".iconfont").removeClass('icon-youjiantou1').addClass('icon-sanjiaoright')
-                }
-            })
+    <div class="swiper-container wrap1">
+        <div>豆豆专属相册</div>
+        <div class="swiper-wrapper">
+            <div class="swiper-slide haha"><img src="./img/1.jpg" alt=""></div>
+            <div class="swiper-slide haha"><img src="./img/2.jpg" alt=""></div>
+            <div class="swiper-slide haha"><img src="./img/3.jpg" alt=""></div>
+            <div class="swiper-slide haha"><img src="./img/4.jpg" alt=""></div>
+            <div class="swiper-slide haha"><img src="./img/5.jpg" alt=""></div>
+            <div class="swiper-slide haha"><img src="./img/6.jpg" alt=""></div>
+            <div class="swiper-slide haha"><img src="./img/7.jpg" alt=""></div>
+            <div class="swiper-slide haha"><img src="./img/8.jpg" alt=""></div>
+            <div class="swiper-slide haha"><img src="./img/9.jpg" alt=""></div>
+            <div class="swiper-slide haha"><img src="./img/10.jpg" alt=""></div>
+        </div>
+        <!-- 如果需要分页器 -->
+        <div class="swiper-pagination"></div>
 
-            $(function () {
-                var timer;
-                var number = 0;
-                var cont = document.getElementsByClassName('membership_LUI')[0];
-                cont.innerHTML += cont.innerHTML;
-                function AutoPlay() {
-                    clearTimeout(timer);
-                    timer = setInterval(function () {
-                        number--;
-                        if (number == -2000) {
-                            number = 0;
-                        }
-                        $('.membership_LUI').css('left', number);
-                    }, 30);
-                }
-                AutoPlay();
-                // 榧犳爣婊戝叆鏆傚仠
-                $('.membership_LUI li').mouseenter(function () {
-                    clearTimeout(timer);
-                }).mouseleave(function () {
-                    AutoPlay();
-                })
-            })
-            // 筛选选择js
-            $(function () {
-                // 类型
-                $(".dia_t_list .t_list").each(function () {
-                    $(this).click(function () {
-                        $(".t_list").removeClass("list_b");
-                        $(this).addClass("list_b");
-                        $("#leixing").attr("value", $(this).attr("rel"));
-                        zhicon = $(this).text();
-                        fuleixingid = $(this).attr("rel");
-                        erclass = 'erclass';
-                        showUser(fuleixingid, zhicon, erclass);
-                        if (fuleixingid === '') {
-                            $("#fuleixing").attr("value", '');
-                            $("#threeleixing").attr("value", '');
-                            $("#txtHinterji").css("display", "none");
-                            $("#txtThreeattribute").css("display", "none");
+        <!-- 如果需要导航按钮 -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    </div>
+    <script>
+        var mySwiper = new Swiper('.swiper-container', {
+            //可选选项，自动滑动
+            // 自动播放   autoplay  关闭  false  打开   true  
+            autoplay: true,
+            // 默认的index下标 0 第一张;
+            initialSlide: 2,
+            // 垂直切换
+            // direction: 'vertical',
+            // 切换时间
+            speed: 300,
+            // 延迟时间
+            autoplay: {
+                delay: 2000
+            },
+            // 打开循环播放
+            // loop: true,
+            // 切换动画效果
+            effect: 'coverflow',
+            // 小圆点分页器
+            pagination: {
+                // css样式选择器 如果不写在标签的话 分页器不会生效 如果想使用分页器 二者缺一不可。
+                el: '.swiper-pagination',
+                // 点击分页器的指示点会控制swiper切换。
+                clickable: true,
+            },
+            // 使用前进后退按钮来控制Swiper切换
+            navigation: {
+                // css标签选择器 果不写在标签的话 分页器不会生效 如果想使用分页器 二者缺一不可。
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+
+        })
+    </script>
+
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js"> </script>
+
+    <script>
+        // 获取元素
+        var box = document.getElementById("box");
+        // 时间变量
+        var t = 3;
+        var timer1 = setInterval(function () {
+            // 改变时间
+            t--;
+            // 给页面赋值
+            box.innerHTML = t;
+            // 停止时间计时器
+            if (t == 0) {
+                console.log('1');
+
+                box.style.fontSize = "30px";
+                $("#box").text("豆豆 除夕快乐!")
+                clearInterval(timer1);
+                var time = setTimeout(() => {
+                    box.style.display = "none";
+                    $(".tex").css({
+                        "display": "block"
+                    })
+                    $("button").click(function () {
+                        if ($("input").val() == "豆豆专属文案") {
+                            $(".wrap").css({
+                                "display": "block"
+                            })
+                            dd();
+                        } else if ($("input").val() == "豆豆专属烟花") {
+
+                        } else if ($("input").val() == "豆豆的相册") {
+                            $(".wrap1").css({
+                                "display": "block"
+                            })
                         } else {
-                            $("#txtHinterji").css("display", "block");
+                            alert("没按提示输入")
                         }
-                    });
-                });
+                    })
 
-                // 二级类型分类
-                $("#txtHinterji").on("click", ".dia_t_list .t_list_fl", function (event) {
+                }, 3000);
+            }
+        }, 1000)
 
-                    event.preventDefault();
-                    $(".t_list_fl").removeClass("list_b");
-                    $(this).addClass("list_b");
-                    $("#fuleixing").attr("value", $(this).attr("rel"));
-                    zhicon = $(this).text();
-                    fuleixingid = $(this).attr("rel");
-                    threec = 'threec';
-                    threeclass(fuleixingid, zhicon, threec);
-                    if (fuleixingid === '') {
-                        $("#threeleixing").attr("value", '');
-                        $("#txtThreeattribute").css("display", "none");
-                    } else {
-                        $("#txtThreeattribute").css("display", "block");
-                    }
-                });
-
-                // 三级类型
-                $("#txtThreeattribute").on("click", ".dia_t_list .t_list_tl", function (event) {
-                    $(".t_list_tl").removeClass("list_b");
-                    $(this).addClass("list_b");
-                    $("#threeleixing").attr("value", $(this).attr("rel"));
-                });
-
-                // 面数
-                $(".dia_t_list .t_list_ms").each(function () {
-                    $(this).click(function () {
-                        $(".t_list_ms").removeClass("list_b");
-                        $(this).addClass("list_b");
-                        $("#mianshu").attr("value", $(this).attr("rel"));
-                    });
-                });
-                // 布线
-                $(".dia_t_list .t_list_bx").each(function () {
-                    $(this).click(function () {
-                        $(".t_list_bx").removeClass("list_b");
-                        $(this).addClass("list_b");
-                        $("#buxian").attr("value", $(this).attr("rel"));
-                    });
-                });
-                // 筛选
-                $(".dia_t_list .t_list_sx").each(function () {
-                    $(this).click(function () {
-                        $(".t_list_sx").removeClass("list_b");
-                        $(this).addClass("list_b");
-                        $("#saixuan").attr("value", $(this).attr("rel"));
-                    });
-                });
-                // 排序
-                $(".dia_t_list .t_list_px").each(function () {
-                    $(this).click(function () {
-                        $(".t_list_px").removeClass("list_b");
-                        $(this).addClass("list_b");
-                        $("#px").attr("value", $(this).attr("rel"));
-                    });
-                });
+        function Nr() {
+            return Math.round(Math.random() * (255));
+        };
+        var timer = setInterval(() => {
+            $(".text_i").css({
+                "color": "rgb(" + Nr() + ',' + Nr() + ',' + Nr() + ")"
             });
-            // 筛选弹框
-            $(window).resize(function () {
-                screen_w()
-            });
-            screen_w();
-            function screen_w() {
-                if ($(window).width() < 992) {
-                    $(".cont_a>a").attr({
-                        "data-toggle": "modal",
-                        "data-target": "#dia_right"
-                    }),
-                        $(".cont_a>a:first-child").removeAttr("data-toggle").removeAttr("data-target")
-                } else {
-                    $(".cont_a>a").removeAttr("data-toggle").removeAttr("data-target")
-                }
-            };
+        }, 1000);
+        // 相册
 
 
-            var ty_name, ty_rel, lx_name, lx_rel, objNameRel = [];
-            $(".cont_a>a").click(function () {
-                ty_name = $(this).attr("name");
-                ty_rel = $(this).attr("rel");
-                for (var a = 0; a < objNameRel.length; a++) {
-                    if (objNameRel.indexOf(param) == -1) {
-                        objNameRel.push(ty_name, ty_rel);
-                    } else {
-                        // objNameRel[a] = param;
-                        // objNameRel[a+1] = param1;
-                    }
-                }
+        function dd() {
+            $(".tex").css({
+                "display": "none"
             })
-            function type_lx() {
-                lx_name = $(".lx").attr("name");
-                lx_rel = $(".lx").val();
-                // console.log(lx_name, lx_rel);
-                objNameRel.push(lx_name, lx_rel);
-                if (ty_rel != undefined) {
-                    console.log(objNameRel);
-                    // ajax(objNameRel)
-                    return
-                }
-            }
-
-            function ajax() {
-                $.ajax({
-                    url: "http://m.liangzimodel.com/xys/ajax.php?" + objNameRel[0] + "=" + objNameRel[1] + "&" + objNameRel[2] + "=" + objNameRel[3], //请求路径
-                    type: "GET", //请求方式
-                    dataType: "text",//设置接受到的响应数据的格式
-                    //回调函数
-                    success: function (data) {
-                        //这个data 是服务器返回的内容 什么格式就要看你设置的 dataType了：
-                        console.log(data);
-                    },
-                    error: function () {
-                        console.log("出错啦...")
-                    }//表示如果请求响应出现错误，会执行的这个回调函数
+            var timer = setInterval(() => {
+                a++;
+                var arr = [];
+                $("div").each(function () {
+                    var id = $(this).attr("id");
+                    $("#" + id).css({
+                        "color": "rgb(" + Nr() + ',' + Nr() + ',' + Nr() + ")"
+                    });
+                    arr.push(id);
                 })
-            }
-
-        </script>
+            }, 1000);
+        }
+    </script>
 </body>
 
 </html>
